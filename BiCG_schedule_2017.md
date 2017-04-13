@@ -9,7 +9,7 @@ home: https://bioinformaticsdotca.github.io/bicg_2017
 ---
 
 
-| | **Day 1** | | **Day 2** |  
+| | **Day 1** | | **Day 2** | | **Day 3** | | **Day 4** | | **Day 5** |  
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |   
 | 8:00 | Registration and Breakfast | 8:00 | Breakfast | 8:00 | Breakfast | 8:00 | Breakfast | 8:00 | Breakfast |
 | 8:30 | Welcome and Introductions | Module 3: Genome Alignment and Assembly (Simpson) | 8:30 | Module 5 : Somatic Mutations and Annotation (Morrissy) | 8:30 | Module 7: Gene Fusion and Rearrangemnts (McPherson) | 8:30 | Module 8: Variants to Networks (Stein and Haw) |  
