@@ -44,21 +44,21 @@ home: https://bioinformaticsdotca.github.io/bicg_201
 
 From the menu bar, Apps > Manage Apps  
 
-Within all apps, Search for the following and install:  
-• jActiveModules (should already be installed. Install if not)
-• GeneMania (should already be installed. Install if not).
-• EnrichmentMap
-• BiNGO
-• Reactome FI Plugin
+Within all apps, Search for the following and install:    
+• jActiveModules (should already be installed. Install if not)  
+• GeneMania (should already be installed. Install if not).  
+• EnrichmentMap  
+• BiNGO  
+• Reactome FI Plugin  
 
-Select GeneMania from Apps Manager → Choose Another Data Set.
-From the list of available data sets, select the most recent (2014-08-12/1 June 2014) and under Include only these networks:
+Select GeneMania from Apps Manager → Choose Another Data Set.  
+From the list of available data sets, select the most recent (2014-08-12/1 June 2014) and under Include only these networks:  
 
-select All → Download.
+select All → Download.  
 
-An Install Window will pop-up. Select H.Sapiens Human (2384 MB) → Install
+An Install Window will pop-up. Select H.Sapiens Human (2384 MB) → Install  
 
-This requires time and a good network connection to download completely, so be patient.
+This requires time and a good network connection to download completely, so be patient.  
 
 11) A PDF viewer (Adobe Acrobat or equivalent).
 
