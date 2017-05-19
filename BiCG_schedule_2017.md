@@ -21,4 +21,4 @@ home: https://bioinformaticsdotca.github.io/bicg_2017
 | 3:00 | Coffee Break | 3:00 | Coffee Break | 3:00 | Coffee Break | 3:00 | Coffee Break | 3:00 | Coffee Break |  
 | 3:30 | Logging into the Cloud (Ouellette/Lu) | 3:30 | Module 4 Lab | 3:30 | Module 6 Lab | 3:30 | Module 8 Variants to Networks (Reimand) | 3:30 | Module 9 Lab |  
 | 5:00 | Dinner | 5:00 | Hosted Social | 5:00 | Dinner | 5:00 | Dinner | 5:00 | Survey and Closing Remarks |
-| 6:00 | UNIX Review | | | 6:00 | Integrated Assignment | | | | |
+| 6:00 | UNIX and R Review | | | 6:00 | Integrated Assignment | | | | |
