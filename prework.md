@@ -5,7 +5,7 @@ title: BiCG PreWork
 header1: Workshop Pages for Students
 header2: Bioinformatics for Cancer Genomics 2017 Pre-Work
 image: /site_images/CBW_cancerDNA_icon-16.jpg
-home: https://bioinformaticsdotca.github.io/bicg_201
+home: https://bioinformaticsdotca.github.io/bicg_2017
 ---
 
 # Install These Tools Before the Workshop:
