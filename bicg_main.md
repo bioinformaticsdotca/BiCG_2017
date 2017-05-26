@@ -1,5 +1,5 @@
 ---
-layout: workshop_main_7day
+layout: workshop_main_5day
 permalink: /bicg_2017
 title: BiCG
 header1: Workshop Pages for Students
