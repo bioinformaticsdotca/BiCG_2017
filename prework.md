@@ -38,7 +38,7 @@ home: https://bioinformaticsdotca.github.io/bicg_2017
 
 8) A PDF viewer (Adobe Acrobat or equivalent).  
 
-9) Install Cytoscape 3.2.1: http://www.cytoscape.org  
+9) Install Cytoscape 3.5.1: http://www.cytoscape.org  
 
 10) Within the Cytoscape program, install the following Cytoscape plugins:
 
@@ -52,7 +52,7 @@ Within all apps, Search for the following and install:
 • Reactome FI Plugin  
 
 Select GeneMania from Apps Manager → Choose Another Data Set.  
-From the list of available data sets, select the most recent (2014-08-12/1 June 2014) and under Include only these networks:  
+From the list of available data sets, select the most recent and under Include only these networks:  
 
 select All → Download.  
 
