@@ -15,7 +15,7 @@ home: https://bioinformaticsdotca.github.io/bicg_2017
 | 8:30 | Welcome and Introductions | 8:30 | Module 3a: Genome Alignment (Simpson) | 8:30 | Module 5 : Somatic Mutations and Annotation (Morrissy) | 8:30 | Module 7: Gene Fusion and Rearrangemnts (McPherson) | 8:30 | Module 8: Variants to Networks (Stein and Haw) |  
 | 9:00 | Module 1: Introduction to Cancer Genomics (Pugh) | | | | | | | | |  
 | 10:30 | Coffee Break | 10:00 | Coffee Break | 10:30 | Coffee Break | 10:30 | Coffee Break | 10:30 | Coffee Break |  
-| 11:00 | Module 2: Databaes and Visualization Tools (Ouellette) | 10:30 | Module 3b: Genome Assembly (Simpson) | 11:00 | Module 5 Lab | 11:00 | Module 7 Lab | 11:00 | Guest Lecture (Jones) |  
+| 11:00 | Module 2: Databases and Visualization Tools (Ouellette) | 10:30 | Module 3b: Genome Assembly (Simpson) | 11:00 | Module 5 Lab | 11:00 | Module 7 Lab | 11:00 | Guest Lecture (Jones) |  
 | 12:30 | Lunch | 12:30 | Lunch | 12:30 | Lunch | 12:30 | Lunch | 12:30 | Lunch |  
 | 1:30 | Module 2 Lab | 1:30 | Module 4: Copy Number Variants (Morrissy) | 1:30 | Module 6: Gene Expression (Yousif) | 1:30 | Module 8 Variants to Networks (Reimand) | 1:30 | Module 9: Clinical Data Integration (Goldenberg) |  
 | 3:00 | Coffee Break | 3:00 | Coffee Break | 3:00 | Coffee Break | 3:00 | Coffee Break | 3:00 | Coffee Break |  
