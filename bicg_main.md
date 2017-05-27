@@ -80,6 +80,9 @@ Coming soon!
 
 [Lab Practical](https://bioinformaticsdotca.github.io/bicg_2017_module4_lab)  
 
+* [Installation](https://bioinformaticsdotca.github.io/bicg_2017_module4_lab_install)
+* [Data Preprocessing](https://bioinformaticsdotca.github.io/bicg_2017_module4_lab_preprocessing)
+
 ***
 
 # Day 3 <a id="day1"></a>  
