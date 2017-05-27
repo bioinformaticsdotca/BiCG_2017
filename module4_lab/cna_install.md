@@ -8,7 +8,7 @@ image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2017
 ---
 
-# Introduction
+## Introduction
 
 This page describes where to get and how to install the software used for this lab module. The table of contents for this page is:
 
@@ -23,7 +23,7 @@ To start, create an environment variable specifying a path to your install direc
 INSTALL_DIR=/path/to/install_dir
 ~~~
 
-# Installing Array Data Preprocessing Software
+## Installing Array Data Preprocessing Software
 
 We will use the procedure described on the [PennCNV site](http://www.openbioinformatics.org/penncnv/penncnv_tutorial_affy_gw6.html). This page also contains links to most of the software we need to download.
 
@@ -68,7 +68,7 @@ wget http://www.aroma-project.org/data/annotationData/chipTypes/GenomeWideSNP_6/
 gunzip GenomeWideSNP_6.cdf.gz
 ~~~
 
-# Installing OncoSNP
+## Installing OncoSNP
 
 We will use [OncoSNP](https://sites.google.com/site/oncosnp/) to infer CNVs from the processed array data. The OncoSNP files can be downloaded [here](https://sites.google.com/site/oncosnp/user-guide/downloads). Note that you will need to register with the author and he will supply a password to unlock the downloaded files.
 
@@ -111,7 +111,7 @@ wget http://www.well.ox.ac.uk/~cyau/gc/b37.zip
 unzip b37.zip
 ~~~
 
-# Installing Sequencing Data Preprocessing Software
+## Installing Sequencing Data Preprocessing Software
 
 We will use [MutationSeq](https://bitbucket.org/shahlabbcca/mutationseq) to identify heterozygous germline variants for input to Titan. To install MutationSeq run:
 ~~~bash
@@ -156,7 +156,7 @@ MutationSeq is installed correctly if you run the following and get the version 
 $INSTALL_DIR/miniconda/miniconda2/bin/python $INSTALL_DIR/mutationseq/mutationseq/museq/classify.py --version
 ~~~
 
-# Installing HMMcopy
+## Installing HMMcopy
 
 HMMcopy has two components, a Bioconductor R package and a C package. We will use the HMMcopy C package to extract binned read counts from our tumour and normal samples, and use this as input to Titan. Note that the HMMcopy R package can be used to call CNAs based on read depth, but it does not make use of b-allele frequencies, and does not model ploidy, normal cell contamination, and tumour heterogeneity. For these reasons, we will not use it for our bulk tumour analysis.
 
@@ -189,7 +189,7 @@ cmake .
 make
 ~~~
 
-# Installing Titan
+## Installing Titan
 
 Titan is an R package available through Bioconductor. To install it, first start R:
 

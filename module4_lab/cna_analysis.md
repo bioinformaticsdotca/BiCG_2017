@@ -5,8 +5,8 @@ layout: tutorial_pagepermalink: /bicg_2017_module4_labtitle: Lab Module 4 - Co
 
 * [Introduction](#introduction)
 * [Setup](#setup)
-* [Part 1: Analysis of CNAs using Array Data](#part-1:-analysis-of-cnas-using-array-data)
-* [Part 2: Analysis of CNAs using Sequencing Data](#part-2:-analysis-of-cnas-using-sequencing-data)
+* [Part 1: Analysis of CNAs using Array Data](#part-1-analysis-of-cnas-using-array-data)
+* [Part 2: Analysis of CNAs using Sequencing Data](#part-2-analysis-of-cnas-using-sequencing-data)
 
 # Introduction
 
