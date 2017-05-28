@@ -23,8 +23,8 @@ First, let's create a directory to hold our results:
 
 ```
 cd ~/workspace
-mkdir Module3
-cd Module3
+mkdir Module3-mapping
+cd Module3-mapping
 ```
 
 ## Mapping using bwa-mem
