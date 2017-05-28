@@ -47,13 +47,13 @@ Coming soon!
 
 [Lab Practical: Connecting to the Cloud](http://bioinformaticsdotca.github.io/AWS_setup)
 
-[Lecture](https://bioinformatics.ca/bicg-2017-mod3b)  
+[Lecture](https://bioinformatics.ca/bicg-2017-mod2b)  
 
 * We have set up 30 instances on the Amazon cloud - one for each student. In order to log in to your instance, you will need a security certificate. If you plan on using Linux or Mac OS X, please download [this certificate](http://cbwmain.dyndns.info/private/CBWNY.pem). Otherwise if you plan on using Windows (with Putty and Winscp), please download [this certificate](http://cbwmain.dyndns.info/private/CBWNY.ppk).  
 
 ## Unix and R review
 
-[Assignment](https://bioinformaticsdotca.github.io/HTSeq_2017_IA_lab)  
+[Assignment](https://bioinformaticsdotca.github.io/bicg-2017-ia)  
 
 ***
 
@@ -63,14 +63,14 @@ Coming soon!
 
 *<font color="#827e9c">Jared Simpson</font>* 
 
-[Lecture](https://bioinformatics.ca/bicg-2017-mod3)
+[Lecture](https://bioinformatics.ca/bicg-2017-mod3a)
 
 
 ## Module 3b: Genome Assembly
 
 *<font color="#827e9c">Jared Simpson</font>* 
 
-[Lecture](https://bioinformatics.ca/bicg-2017-mod3)
+[Lecture](https://bioinformatics.ca/bicg-2017-mod3b)
 
 ## Module 4: Copy Number Variants
 
@@ -78,7 +78,7 @@ Coming soon!
 
 [Lecture](https://bioinformatics.ca/bicg-2017-mod4)
 
-[Lab Practical](https://bioinformaticsdotca.github.io/bicg_2017_module4_lab)  
+[Lab Practical](https://bioinformaticsdotca.github.io/bicg-2017-mod4-lab)  
 
 * [Installation](https://bioinformaticsdotca.github.io/bicg_2017_module4_lab_install)
 * [Data Preprocessing](https://bioinformaticsdotca.github.io/bicg_2017_module4_lab_preprocessing)
@@ -93,7 +93,7 @@ Coming soon!
 
 [Lecture](https://bioinformatics.ca/bicg-2017-mod5)
 
-[Lab Practical](https://bioinformaticsdotca.github.io/bicg_2017_module5_lab)  
+[Lab Practical](https://bioinformaticsdotca.github.io/bicg_2017_mod5_lab)  
 
 ## Module 6: Gene Expression  
 
@@ -105,7 +105,7 @@ Coming soon!
 
 ## Integrated Assignment
 
-[Integrated Assignment](https://bioinformaticsdotca.github.io/HTSeq_2017_IA_lab)  
+[Integrated Assignment](https://bioinformatics.ca/bicg_2017_ia)  
 
 ***
 
@@ -115,17 +115,19 @@ Coming soon!
 
 *<font color="#827e9c">Andrew McPherson</font>* 
 
-[Lecture](https://bioinformatics.ca/bicg-2017-mod4)
+[Lecture](https://bioinformatics.ca/bicg-2017-mod7)
 
-[Lab Practical](https://bioinformaticsdotca.github.io/bicg_2017_module4_lab)  
+[Lab Practical]()  
 
 ## Module 8: Variants to Networks
 
 *<font color="#827e9c">Juri Reimand</font>* 
 
-[Lecture](https://bioinformatics.ca/bicg-2017-mod5)
+[Lecture a](https://bioinformatics.ca/bicg-2017-mod8a)  
 
-[Lab Practical](https://bioinformaticsdotca.github.io/bicg_2017_module5_lab)  
+[Lecture b](https://bioinformatics.ca/bicg-2017-mod8b)
+
+[Lab Practical]()  
 
 ***
 
@@ -137,21 +139,23 @@ Coming soon!
 
 [Lecture](https://bioinformatics.ca/bicg-2017-mod5)
 
+[Lab Lecture](https://bioinformatics.ca/bicg-2017-mod8d)
+
 [Lab Practical](https://bioinformaticsdotca.github.io/bicg_2017_module5_lab)  
 
 ## Guest Lecture
 
 *<font color="#827e9c">Steve Jones</font>*
 
-[Lecture](https://bioinformatics.ca/bicg-2017-mod0)
+[Lecture]()
 
 ## Module 9: Clinical Data Integration
 
 *<font color="#827e9c">Anna Goldenberg</font>* 
 
-[Lecture](https://bioinformatics.ca/bicg-2017-mod1)
+[Lecture](https://bioinformatics.ca/bicg-2017-mod9)
 
-[Lab Practical](https://bioinformaticsdotca.github.io/HTSeq_2017_module2_lab)
+[Lab Practical]()
 
 ***
 
