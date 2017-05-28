@@ -43,7 +43,9 @@ Coming soon!
 
 [Lecture](https://bioinformatics.ca/bicg-2017-mod2)
 
-[Lab Practical](https://bioinformaticsdotca.github.io/HTSeq_2017_module2_lab)  
+[Lab lecture](https://bioinformatics.ca/bicg-2017-mod2pt2)  
+
+[Lab Practical](https://bioinformaticsdotca.github.io/BiCG_2017_module2_igv)  
 
 [Lab Practical: Connecting to the Cloud](http://bioinformaticsdotca.github.io/AWS_setup)
 
@@ -53,7 +55,7 @@ Coming soon!
 
 ## Unix and R review
 
-[Assignment](https://bioinformaticsdotca.github.io/bicg-2017-ia)  
+[Assignment](https://bioinformaticsdotca.github.io/bicg-2017-Unix_and_R)  
 
 ***
 
@@ -63,22 +65,28 @@ Coming soon!
 
 *<font color="#827e9c">Jared Simpson</font>* 
 
-[Lecture](https://bioinformatics.ca/bicg-2017-mod3a)
+[Lecture](https://bioinformatics.ca/bicg-2017-mod3a)  
+
+[Lab Practical](https://bioinformaticsdotca.github.io/BiCG_2017_mod3_mapping)  
 
 
 ## Module 3b: Genome Assembly
 
 *<font color="#827e9c">Jared Simpson</font>* 
 
-[Lecture](https://bioinformatics.ca/bicg-2017-mod3b)
+[Lecture](https://bioinformatics.ca/bicg-2017-mod3b)  
+
+[Lab Practical](https://bioinformaticsdotca.github.io/BiCG_2017_mod3_assembly)  
 
 ## Module 4: Copy Number Variants
 
 *<font color="#827e9c">Sorana Morrissy</font>* 
 
-[Lecture](https://bioinformatics.ca/bicg-2017-mod4)
+[Lecture](https://bioinformatics.ca/bicg-2017-mod4)  
 
-[Lab Practical](https://bioinformaticsdotca.github.io/bicg-2017-mod4-lab)  
+[Lab Lecture](https://bioinformatics.ca/bicg-2017-mod4-lab)  
+
+[Lab Practical](https://bioinformaticsdotca.github.io/bicg_2017_module4_lab)  
 
 * [Installation](https://bioinformaticsdotca.github.io/bicg_2017_module4_lab_install)
 * [Data Preprocessing](https://bioinformaticsdotca.github.io/bicg_2017_module4_lab_preprocessing)
@@ -91,9 +99,11 @@ Coming soon!
 
 *<font color="#827e9c">Sorana Morrissy</font>* 
 
-[Lecture](https://bioinformatics.ca/bicg-2017-mod5)
+[Lecture](https://bioinformatics.ca/bicg-2017-mod5)  
 
-[Lab Practical](https://bioinformaticsdotca.github.io/bicg_2017_mod5_lab)  
+[Lecture](https://bioinformatics.ca/bicg_2017_mod5_lab)
+
+[Lab Practical]()  
 
 ## Module 6: Gene Expression  
 
