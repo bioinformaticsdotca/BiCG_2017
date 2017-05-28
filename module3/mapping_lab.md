@@ -10,9 +10,7 @@ home: https://bioinformaticsdotca.github.io/bicg_2017
 
 # Introduction
 
-In this tutorial we will use [bwa](https://github.com/lh3/bwa) to map reads to the human reference genome.
-
-The data that we will use is from a breast cancer cell line, HCC1395. In the second part of this module we will use [lumpy](https://github.com/arq5x/lumpy-sv) to find genome rearrangements using the mapped reads. Module 4 will show you how to discover fusion genes using the same data set.
+In this tutorial we will use [bwa](https://github.com/lh3/bwa) to map reads from a breast cancer cell line to the human reference genome.
 
 # Mapping Tutorial
 
