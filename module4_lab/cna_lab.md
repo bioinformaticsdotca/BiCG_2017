@@ -307,8 +307,7 @@ The OncoSNP plot for chromosome 21 is shown below, with some regions highlighted
 
 For each of the highlighted regions (1), (2), and (3) try to identify: (a) the number of copies present, (b) whether loss-of-heterozygosity has occurred, and (c) what the major and minor allele counts are. We will take this opportunity to stop and discuss as a group. 
 
-Answers can be found [here](/module4_lab/images/HCC1395_oncosnp_chr21_answers.png).
-
+Answers can be found [here](https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/HCC1395_oncosnp_chr21_answers.png?raw=true).
 
 # Part 2: Analysis of CNAs using Sequencing Data
 
@@ -573,10 +572,10 @@ Titan predicts that this sample has two major copy number clones. For SA501X4F, 
 Let's take a look at the chromosome 1 Titan plots from SA501X3F cluster2 and SA501X4F cluster1.
 
 SA501X3F (whole-genome sequencing at 23X depth), chromosome 1:
-![SA501X3F-23X_cluster2_chr1](/module4_lab/images/SA501X3F-23X_cluster2_chr1.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/SA501X3F-23X_cluster2_chr1.png?raw=true" alt="SA501X3F-23X_cluster2_chr1" width="750" /> 
 
 SA501X4F (whole-genome sequencing at 38X depth), chromosome 1:
-![SA501X4F-38X_cluster1_chr1](/module4_lab/images/SA501X4F-38X_cluster1_chr1.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/SA501X4F-38X_cluster1_chr1.png?raw=true" alt="SA501X4F-38X_cluster1_chr1" width="750" /> 
 
 Take a look at the allelic ratio values in the heterozygous region - they are slightly more "spread out" in SA501X3F than SA501X4F. Why might this be?
 
@@ -585,7 +584,7 @@ Take a look at the allelic ratio values in the heterozygous region - they are sl
 Now let's compare the chromosome 1 results for SA501X4F (above) with the patient tumour SA501T cluster 1.
 
 SA501T (whole-genome sequencing at 49X depth), chromosome 1:
-![SA501T-49X_cluster1_chr1](/module4_lab/images/SA501T-49X_cluster1_chr1.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/SA501T-49X_cluster1_chr1.png?raw=true" alt="SA501T-49X_cluster1_chr1" width="750" /> 
 
 Notice the allelic ratio values in the deleted region are "shifted inwards" in the tumour sample, whereas they are at 0 or 1 in the xenograft. Why might this be?
 
@@ -608,13 +607,13 @@ Note that it is not only the lowest plot that is different, but that the "Cellul
 Now let's look at chromosome X in all three of the samples. What is going on here?
 
 SA501T (whole-genome sequencing at 49X depth), chromosome X:
-![SA501T-49X_cluster1_chrX](/module4_lab/images/SA501T-49X_cluster1_chrX.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/SA501T-49X_cluster1_chrX.png?raw=true" alt="SA501T-49X_cluster1_chrX" width="750" /> 
 
 SA501X3F (whole-genome sequencing at 23X depth), chromosome X:
-![SA501X3F-23X_cluster2_chrX](/module4_lab/images/SA501X3F-23X_cluster2_chrX.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/SA501X3F-23X_cluster2_chrX.png?raw=true" alt="SA501X3F-23X_cluster2_chrX" width="750" /> 
 
 SA501X4F (whole-genome sequencing at 38X depth), chromosome X:
-![SA501X4F-38X_cluster1_chrX](/module4_lab/images/SA501X4F-38X_cluster1_chrX.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/SA501X4F-38X_cluster1_chrX.png?raw=true" alt="SA501X4F-38X_cluster1_chrX" width="750" /> 
 
 Answers:
 (1) SA501X3F was sequenced at lower depth which makes the BAF values more noisy.  
@@ -628,11 +627,11 @@ Answers:
 
 As mentioned above, a recent study carried out single cell whole-genome sequencing on the SA501X3F and SA501X4F tumours. It turns out that the SA501X3F tumour indeed has two major copy number populations, with either one or two copies of chromosome X. Here are three single-cell profiles from this tumour, with copy number inferred using the HMMcopy R package:
 
-![zahn_et_al_2017_SA501X3F_single_cells](/module4_lab/images/zahn_et_al_2017_SA501X3F_single_cells.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/zahn_et_al_2017_SA501X3F_single_cells.png?raw=true" alt="zahn_et_al_2017_SA501X3F_single_cells" width="750" /> 
 
 Below is a copy number heatmap showing 260 single cells from SA501X3F (each row is one cell). It turns out that 46 out of these 260 cells had two copies of chromosome X, which corresponds to 17.7% of the sampled population. This appears to agree quite well with Titan's prediction (14%).
 
-![zahn_et_al_2017_SA501X3F_260_single_cells_heatmap](/module4_lab/images/zahn_et_al_2017_SA501X3F_260_single_cells_heatmap.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/zahn_et_al_2017_SA501X3F_260_single_cells_heatmap.png?raw=true" alt="zahn_et_al_2017_SA501X3F_260_single_cells_heatmap" width="750" /> 
 
 Further more, sequencing 254 single cells from SA501X4F showed no trace of the population with two copies of chromosome X. See the paper for details. 
 
@@ -641,19 +640,21 @@ Further more, sequencing 254 single cells from SA501X4F showed no trace of the p
 Titan may sometimes converge to a local rather than global maximum solution. In the example below from SA501X3F, Titan converged to the wrong ploidy value, resulting in strange state assignments. Can you point out segments in this plot that indicate the calls are incorrect? Hint: look at the colours assigned to different regions in the LRR plot.
 
 SA501X3F chromosome 16, ploidy converged to 2.50:
-![SA501X3F_converge_wrong_ploidy_2-50_cluster1_chr16](/module4_lab/images/SA501X3F_converge_wrong_ploidy_2-50_cluster1_chr16.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/SA501X3F_converge_wrong_ploidy_2-50_cluster1_chr16.png?raw=true" alt="SA501X3F_converge_wrong_ploidy_2-50_cluster1_chr16" width="750" /> 
 
 Titan may also sometimes converge to two ploidy values, one of which is twice the other (e.g. 2.0 and 4.0). In this case, the solution is unidentifiable. In the example below for SA501X3F (whose true ploidy of approximately 1.8 has been experimentally confirmed), the Titan result of approximately 3.6 is equally logical. Note that you will not see any regions assigned to the 1-copy DLOH state in this case:
 
 SA501X3F chromosome 16, ploidy converged to 3.56:
-![SA501X3F_converge_ploidy_3-56_cluster1_chr16](/module4_lab/images/SA501X3F_converge_ploidy_3-56_cluster1_chr16.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/SA501X3F_converge_ploidy_3-56_cluster1_chr16.png?raw=true" alt="SA501X3F_converge_ploidy_3-56_cluster1_chr16" width="750" /> 
 
 Below is another example from a different sample where the Titan results don't seem to make sense (image courtesy of Andrew McPherson). Can you guess what went wrong? Hint: it isn't Titan's fault this time!
 
 Patient 15 chromosome 10 (cluster 3):
-![patient_15_cluster3_chr10_mismatch](/module4_lab/images/patient_15_cluster3_chr10_mismatch.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/patient_15_cluster3_chr10_mismatch.png?raw=true" alt="patient_15_cluster3_chr10_mismatch" width="750" /> 
 
-Answer: the "matched normal" sample used in the analysis was not actually from the same patient as the tumour. You can see the correct profile after the mismatch was resolved [here](/module4_lab/images/patient_15_cluster3_chr10_correct.png).
+Answer: the "matched normal" sample used in the analysis was not actually from the same patient as the tumour. You can see the correct profile after the mismatch was resolved [here](https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/patient_15_cluster3_chr10_correct.png?raw=true).
+
+
 
 ## Plotting with R
 
@@ -699,8 +700,8 @@ Finally, let's take a look at the whole-genome plots for SA501T, SA501X3F, and S
 
 For SA501X3F, you can clearly see that the BAF values for chromosome X are "shifted inwards" relative to the BAF values for other regions that Titan called DLOH. This is a clear indication of copy number heterogeneity. 
 
-![SA501T](/module4_lab/images/SA501T_cluster1_plot.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/SA501T_cluster1_plot.png?raw=true" alt="SA501T_cluster1_plot" width="750" /> 
 
-![SA501X3F](/module4_lab/images/SA501X3F_cluster2_plot.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/SA501X3F_cluster2_plot.png?raw=true" alt="SA501X3F_cluster2_plot" width="750" /> 
 
-![SA501X4F](/module4_lab/images/SA501X4F_cluster1_plot.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/SA501X4F_cluster1_plot.png?raw=true" alt="SA501X4F_cluster1_plot" width="750" /> 
