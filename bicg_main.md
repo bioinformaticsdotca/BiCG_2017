@@ -14,7 +14,7 @@ The course schedule can be found [here](https://bioinformaticsdotca.github.io/bi
 
 Pre-readings, pre-work, and laptop setup instructions can be found [here](https://bioinformaticsdotca.github.io/BiCG_2017_prework).  
 
-If you have questions or comments, visit the workshop [Q&A forum](https://noteapp.com/HTSeq2017).
+If you have questions or comments, visit the workshop [Q&A forum](https://noteapp.com/BiCG2017).
 
 ***
 
