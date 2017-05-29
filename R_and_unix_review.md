@@ -54,6 +54,14 @@ Basic commands:
 
 ### RStudio Notebooks
 
+Information on RStudio Notebooks can be found [here](http://rmarkdown.rstudio.com/r_notebooks.html).  
+
+RStudio notebooks are written in R Markdown and contain text that can be executed independently.
+
+To start a new notebook, `File -> New File -> R Notebook`.  
+
+To run code chunks, place your cursor within the code chunk and press *Cmd+Shift+Enter* on Mac and  *Crtl+Shift+Enter* or click the green triangle run button.  The output of the chunk appears below the code chunk.  
+
 ### Getting Around
 
 #### The Hard Way
@@ -73,7 +81,7 @@ ls()
 
 #### The Easy Way
 
-In RStudio we can use the "Files" tab to navigate.  
+In RStudio we can use "Session" > "Set Working Directory".  
   
 ### Data Types
 
@@ -195,18 +203,123 @@ together.list[["matrix.example"]][,2]
 
 ### Reading Data In
 
-We use `read.data` to read in data.
+We use `read.data` or `read.csv` to read in data.  
+
+```r
+gene_example <- read_csv("Gene_R_example.csv")
+```
+
+In RStudio, we can use the "File" navigation window instead.  Navigate to the directory containing the Gene_R_example.csv that we downloaded previously. Click on the file name then click "Import Dataset."  A new window appears allowing you to modify attributes of your file.  Rename the file to the object "gene_example".
 
 Commands like `head` and `tail` also work in R.
 
+```r
+head(gene_example)
+View(gene_example)
+```
+
 ### Basic Plotting
 
+A very basic plot:
 
+```r
+plot(x=gene_example$Control, y=gene_example$Treated)
+```
 
-### RStudio Notebooks
+A nicer plot:
 
+```r
+plot(x=gene_example$Control, y=gene_example$Treated,
+    xlab = "Control",
+    ylab = "Treated",
+    cex.lab = 1.5,
+    main = "A nice scatter plot",
+    pch = 16,
+    bty = "n",
+    col = "dark blue",
+    las = 1
+    )
+## las
+## How to change the axes label style in R
+## To change the axes label style, use the graphics option las (label style). This changes the orientation angle of the labels:
+## 0: The default, parallel to the axis
+## 1: Always horizontal
+## 2: Perpendicular to the axis
+## 3: Always vertical
 
+## bty
+## To change the type of box round the plot area, use the option bty (box type):
+## "o": The default value draws a complete rectangle around the plot.
+## "n": Draws nothing around the plot.
+```
 
+Connecting the dots:
 
+```r
+plot(x=gene_example$Control, y=gene_example$Treated,
+    xlab = "Control",
+    ylab = "Treated",
+    cex.lab = 1.5,
+    main = "A nice scatter plot",
+    pch = 16,
+    bty = "n",
+    col = "dark blue",
+	type = "b",
+	las = 1
+	)
+```
 
+#### Histograms
 
+```r
+hist(gene_example$Control)
+
+hist(gene_example$Control,
+    xlab = "Expression",
+    ylab = "Number of Genes",
+    cex.lab = 1.5,
+    main = "A nice histogram",
+    col = "cyan",
+    breaks = 10,
+    las = 1
+    )
+```
+
+#### Boxplots
+
+```r
+ boxplot(gene_example[,2:3])
+```
+
+```r
+boxplot(gene_example[,2:3],
+	width = c(3,1),
+	col = "red",
+	border = "dark blue",
+	names = c("Control", "Treatment"),
+	main = "My boxplot",
+	notch = TRUE,
+	horizontal = TRUE
+	)
+```
+
+#### Saving your plots as PDFs
+
+```r
+pdf("myfigure.pdf", height=10, width=6)
+par(mfrow=c(2,1))
+
+plot(x=gene_example$Control, y=gene_example$Treated,
+    xlab = "Control",
+    ylab = "Treated",
+    cex.lab = 1.5,
+    main = "A nice scatter plot",
+    pch = 16,
+    bty = "n",
+    col = "dark blue",
+	type = "b",
+	las = 1
+	)
+  
+  dev.off()
+  ```
