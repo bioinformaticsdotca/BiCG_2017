@@ -24,68 +24,68 @@ In this lab module, we will walk through a basic workflow for calling copy numbe
 
 To begin, login into the server and enter your workspace directory:
 
-~~~bash
+```bash
 cd /home/ubuntu/workspace
-~~~
+```
 
 Create a sub-directory for this module, and navigate to it:
 
-~~~bash
+```bash
 mkdir Module4
 cd Module4
-~~~
+```
 
 In this section, we will set some environment variables to help facilitate the execution of commands. These variables will store the locations of some important paths we will need.
 
 > Note: these environment variables will only persist in the current session. If you log out and log back into the server, you will have to set these variables again.
 
 For convinience, we first store an environment variable with the path to your Module 4 working directory. 
-~~~bash
+```bash
 CNA_WORKSPACE=/home/ubuntu/workspace/Module4
-~~~
+```
 
 When we want to refer to this variable later, we use the $ symbol before the variable name:
-~~~bash
+```bash
 echo $CNA_WORKSPACE
-~~~
+```
 
 Now let's create links in this CNA working directory to: (1) the data we will use, (2) the install directory, (3) some helper scripts we will need, and (4) a directory with reference genome files.
 
-~~~bash
+```bash
 ln -s /home/ubuntu/CourseData/CG_data/data $CNA_WORKSPACE		# link to data
 ln -s /home/ubuntu/CourseData/CG_data/Module4/install $CNA_WORKSPACE	# link to install directory
 ln -s /home/ubuntu/CourseData/CG_data/Module4/scripts $CNA_WORKSPACE	# link to scripts
 ln -s /home/ubuntu/CourseData/CG_data/Module4/ref_data $CNA_WORKSPACE	# link to reference genome data
-~~~
+```
 
 Check that you have four new directories in your workspace:
 
-~~~bash
+```bash
 ls $CNA_WORKSPACE
-~~~
+```
 
 You can also access your workspace directory through your web browser (replace XX with your student number):
 
-~~~bash
+```bash
 http://cbwXX.dyndns.info/Module4
-~~~
+```
 
 Let's create an environment variable for the install directory, so that we can later refer to the locations of individual programs and files relative to this path:
 
-~~~bash
+```bash
 INSTALL_DIR=$CNA_WORKSPACE/install
-~~~
+```
 
 Now we will specify the directories where specific files and programs are installed, relative to the install directory. 
 
-~~~bash
+```bash
 GC_DIR=$INSTALL_DIR/gc_content/b37			# GC content files for the reference genome
 GW6_DIR=$INSTALL_DIR/penncnv/gw6			# Affymetrix SNP6.0 normalization files
 SNP6_CDF=$INSTALL_DIR/apt/GenomeWideSNP_6.cdf		# Affymetrix SNP6.0 cel definition file (CDF)
 APT_DIR=$INSTALL_DIR/apt/apt-1.19.0-x86_64-intel-linux	# Affymetrix Power Tools (APT) program
 MCR_DIR=$INSTALL_DIR/matlab_mcr/v82			# Matlab MCR
 ONCOSNP_DIR=$INSTALL_DIR/oncosnp			# OncoSNP program
-~~~
+```
 
 You are now ready to start the analysis.
 
@@ -93,22 +93,22 @@ You are now ready to start the analysis.
 
 We will call copy number alterations using publicly available Affymetrix SNP 6.0 data from breast cancer cell line HCC1395. The array data in `.cel` format has been downloaded for you. You can see the file in your linked data directory:
 
-~~~bash
+```bash
 ls $CNA_WORKSPACE/data/HCC1395/snp6
-~~~
+```
 
 Create a SNP6 analysis directory in your workspace, and navigate to that directory:
-~~~bash
+```bash
 mkdir -p $CNA_WORKSPACE/analysis/snp6
 cd $CNA_WORKSPACE/analysis/snp6
-~~~
+```
 
 Next, create a file listing all of the `.cel` files to be used in the downstream analysis. In practice we should normalize many arrays in a batch. However, for demonstration purposes we use just a single tumour:
 
-~~~bash
+```bash
 echo cel_files > $CNA_WORKSPACE/analysis/snp6/cel_file_list.txt
 echo $CNA_WORKSPACE/data/HCC1395/snp6/GSM888107.CEL >> $CNA_WORKSPACE/analysis/snp6/cel_file_list.txt
-~~~
+```
 
 ## Step 1 - Array Normalization
 
@@ -116,25 +116,25 @@ The first step in array analysis is to normalize the signal intensity data. To d
 
 The sketch file gives the reference signal distribution to be used for normalization:
 
-~~~bash
+```bash
 SKETCH_FILE=$GW6_DIR/lib/hapmap.quant-norm.normalization-target.txt
-~~~
+```
 
 The cluster file defines genotype clusters from HapMap, and is used for small batches:
 
-~~~bash
+```bash
 CLUSTER_FILE=$GW6_DIR/lib/hapmap.genocluster
-~~~
+```
 
 The `.pfb` file specifies the chromosome positions for each probe:
 
-~~~bash
+```bash
 LOC_FILE=$GW6_DIR/lib/affygw6.hg19.pfb
-~~~
+```
 
 Once these reference files have been defined, we can perform probeset summarization using Affymetrix Power Tools (APT):
 
-~~~bash
+```bash
 mkdir -p $CNA_WORKSPACE/analysis/snp6/apt
 cd $CNA_WORKSPACE/analysis/snp6/apt
 $APT_DIR/bin/apt-probeset-summarize \
@@ -145,13 +145,13 @@ $APT_DIR/bin/apt-probeset-summarize \
     --cel-files $CNA_WORKSPACE/analysis/snp6/cel_file_list.txt \
     --chip-type GenomeWideEx_6 \
     --chip-type GenomeWideSNP_6
-~~~
+```
 
 ## Step 2 - Extract LRR and BAF
 
 Now that normalization is complete, we can extract the log R ratios (LRR) and b-allele frequencies (BAF). PennCNV is a software package for calling CNVs from array data, but we will only be using it to preprocess our data. We will do the actual CNA calling with OncoSNP, which is specialized for cancer data.
 
-~~~bash
+```bash
 mkdir -p $CNA_WORKSPACE/analysis/snp6/penncnv
 cd $CNA_WORKSPACE/analysis/snp6/penncnv
 $GW6_DIR/bin/normalize_affy_geno_cluster.pl \
@@ -159,20 +159,20 @@ $GW6_DIR/bin/normalize_affy_geno_cluster.pl \
 	$CNA_WORKSPACE/analysis/snp6/apt/quant-norm.pm-only.med-polish.expr.summary.txt \
 	-locfile $LOC_FILE \
 	-out $CNA_WORKSPACE/analysis/snp6/penncnv/gw6.lrr_baf.txt
-~~~
+```
 
 The BAF and LRR values for every sample in the batch will be placed into a single file. The next step will be to split them into sample specific BAF and LRR files for downstream analysis (even though we only have one sample, we will still do this to follow a consistent workflow):
 
-~~~bash
+```bash
 perl $CNA_WORKSPACE/scripts/penncnv/kcolumn.pl $CNA_WORKSPACE/analysis/snp6/penncnv/gw6.lrr_baf.txt split 2 -tab -head 3 \
     -name --output $CNA_WORKSPACE/analysis/snp6/penncnv/gw6
-~~~
+```
 
 The sample-specific BAF and LRR files will be placed in a file `gw6.*`. The file structure is one probe per line, giving the position, normalized LRR and BAF for each probe. You can view the file as follows:
 
-~~~bash
+```bash
 less -S $CNA_WORKSPACE/analysis/snp6/penncnv/gw6.GSM888107
-~~~
+```
 
 | Name          | Chr | Position | GSM888107.CEL Log R Ratio | GSM888107.CEL.B Allele Freq |
 |---------------|-----|----------|---------------------------|-----------------------------|
@@ -190,28 +190,28 @@ The OncoSNP manual recommends only using the SNP probes and not the CNA probes f
 
 To filter out the CNA probes, use the following command:
 
-~~~bash
+```bash
 grep -v -P 'CN_\d+' $CNA_WORKSPACE/analysis/snp6/penncnv/gw6.GSM888107 > $CNA_WORKSPACE/analysis/snp6/penncnv/gw6.GSM888107.snp_probes
-~~~
+```
 
 ## Step 3 - Call CNAs with OncoSNP
 
 Now that we have the BAF and LRR data, we will use OncoSNP to call copy number alterations.  We start by creating a working directory for OncoSNP:
 
-~~~bash
+```bash
 mkdir -p $CNA_WORKSPACE/analysis/snp6/oncosnp
 cd $CNA_WORKSPACE/analysis/snp6/oncosnp
-~~~
+```
 
 Make sure that the LD_LIBRARY_PATH contains the path to the MCR:
 
-~~~bash
+```bash
 export LD_LIBRARY_PATH=$MCR_DIR:$LD_LIBRARY_PATH
-~~~
+```
 
 OncoSNP has many command line options, and most will not change between runs for different datasets. Below is an example of how you could run it:
 
-~~~bash
+```bash
 $ONCOSNP_DIR/run_oncosnp.sh $MCR_DIR \
 	--sampleid HCC1395 \
 	--tumour-file $CNA_WORKSPACE/analysis/snp6/penncnv/gw6.GSM888107.snp_probes \
@@ -229,7 +229,7 @@ $ONCOSNP_DIR/run_oncosnp.sh $MCR_DIR \
 	--hgtables $ONCOSNP_DIR/configuration/hgTables_b37.txt \
 	> $CNA_WORKSPACE/analysis/snp6/oncosnp/run_oncosnp.log \
 	2> $CNA_WORKSPACE/analysis/snp6/oncosnp/run_oncosnp.err &
-~~~
+```
 
 Some important parameters to consider:
 
@@ -241,35 +241,35 @@ Some important parameters to consider:
 
 Note that the `&` character at the end of the command above sends the job to run in the background. We specify the location of a log file after the `>` character, which ensures that any progress messages the program produces while it is running will be stored in a file rather than printed to the terminal. We can monitor the progress of the run by examining this file with the `less` program (remember to press `q` to exit).
 
-~~~bash
+```bash
 less $CNA_WORKSPACE/analysis/snp6/oncosnp/run_oncosnp.log
-~~~
+```
 
 Similarly, the `2>` character will write any errors the job produces to an error file, which we can monitor to see if anything went wrong:
 
-~~~bash
+```bash
 less $CNA_WORKSPACE/analysis/snp6/oncosnp/run_oncosnp.err
-~~~
+```
 
 We can see if the script is still running by looking at our background jobs:
 
-~~~bash
+```bash
 jobs
-~~~
+```
 
 When the program finishes we can go to the output folder and browse the results:
 
-~~~bash
+```bash
 ls -lh $CNA_WORKSPACE/analysis/snp6/oncosnp
-~~~
+```
 
 The first key file is the `.qc` file which outputs some basic quality control values and parameter estimates.  By default, two lines are reported because OncoSNP does two analysis runs. One run initializes the ploidy (average copy number) to diploid, and the other to non-diploid. The run which OncoSNP reports as more likely (higher log-likelihood) is reported in the first line. 
 
 We notice that in this case, both OncoSNP runs converged to a very similar value for the average copy number, which is good. The normal content (stromal contamination or fraction of normal cells in the tumour) is also reported in this file:
 
-~~~bash
+```bash
 column -t $CNA_WORKSPACE/analysis/snp6/oncosnp/HCC1395.qc | less -S
-~~~
+```
 
 | LogRRatioShift | NormalContent | Copy Number (Average) | Log-likelihood | OutlierRate | LogRRatioStd | BAlleleFreqStd | PloidyNo |
 |----------------|---------------|-----------------------|----------------|-------------|--------------|----------------|----------|
@@ -278,9 +278,9 @@ column -t $CNA_WORKSPACE/analysis/snp6/oncosnp/HCC1395.qc | less -S
 
 OncoSNP also generates a `.cnvs` file, which contains the smoothed segments with an associated copy number prediction. One column of particular interest is the "Tumour State" column. This is an integer >= 1 which represents the most likely OncoSNP copy number state for that segment. A table explaining these states is found in the [OncoSNP paper](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-9-r92).
 
-~~~bash
+```bash
 column -t $CNA_WORKSPACE/analysis/snp6/oncosnp/HCC1395.cnvs | less -S
-~~~
+```
 
 | Chromosome | StartPosition | EndPosition | CopyNumber | LOH | Rank | Loglik       | nProbes | NormalFraction | TumourState | PloidyNo | MajorCopyNumber | MinorCopyNumber |
 |------------|---------------|-------------|------------|-----|------|--------------|---------|----------------|-------------|----------|-----------------|-----------------|
@@ -293,9 +293,9 @@ column -t $CNA_WORKSPACE/analysis/snp6/oncosnp/HCC1395.cnvs | less -S
 
 The final interesting file that OncoSNP produces is a compressed file with plots `HCC1395.*.ps.gz`.  Download the plots you produced by entering this address in your browser:
 
-~~~bash
+```bash
 http://cbwXX.dyndns.info/Module4/analysis/snp6/oncosnp
-~~~
+```
 
 Where XX is your student number. You can see an explanation of the OncoSNP CNA ranks [here](https://sites.google.com/site/oncosnp/user-guide/oncosnpranking). 
 
@@ -303,7 +303,7 @@ Where XX is your student number. You can see an explanation of the OncoSNP CNA r
 
 The OncoSNP plot for chromosome 21 is shown below, with some regions highlighted in blue:
 
-![HCC1395_chr21_questions](/module4_lab/images/HCC1395_oncosnp_chr21_questions.png)
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/HCC1395_oncosnp_chr21_questions.png?raw=true" alt="HCC1395_chr21_questions" width="750" /> 
 
 For each of the highlighted regions (1), (2), and (3) try to identify: (a) the number of copies present, (b) whether loss-of-heterozygosity has occurred, and (c) what the major and minor allele counts are. We will take this opportunity to stop and discuss as a group. 
 
@@ -320,27 +320,27 @@ Processing sequencing data takes time, so several of the preprocessing steps hav
 
 The raw sequencing data has been downloaded and aligned for you. This data should already be in the linked data directory you created:
 
-~~~bash
+```bash
 ls $CNA_WORKSPACE/data/HCC1395/exome
-~~~
+```
 
 ## Step 1 - Extract Binned Read Counts
 
 While array analysis involved probe intensities, sequencing analysis uses binned read counts to infer copy number.  We used the HMMcopy C package to extract the number of reads in each bin for 1000 bp bins across the genome, from both the tumour and normal `.bam` files. Please refer to the preprocessing wiki page for details, and try to reproduce this in your own time. For now, let's create an analysis directory for this step, and copy the processed data into it:
 
-~~~bash
+```bash
 mkdir -p $CNA_WORKSPACE/analysis/exome/hmmcopy
 cd $CNA_WORKSPACE/analysis/exome/hmmcopy
 cp /home/ubuntu/CourseData/CG_data/Module4/analysis/exome/hmmcopy/* $CNA_WORKSPACE/analysis/exome/hmmcopy
-~~~
+```
 
 The output is in the form of `.wig` files for the tumour and normal. These files specify the number of reads that fall into each genomic bin. The format is not very human-friendly, but you can take a look:
 
-~~~bash
+```bash
 less -S HCC1395_exome_tumour.wig
-~~~
+```
 
-~~~
+```
 fixedStep chrom=1 start=1 step=1000 span=1000
 0
 0
@@ -363,7 +363,7 @@ fixedStep chrom=1 start=1 step=1000 span=1000
 9189
 2672
 9082
-~~~
+```
 
 ## Step 2 - Identify Heterozygous SNPs and Extract Allele Counts
 
@@ -371,17 +371,17 @@ The next step in CNA analysis for sequencing data is to identify heterozygous ge
 
 This step has also been completed for you using MutationSeq. Please refer to the preprocessing wiki page for details, and try to reproduce this in your own time. Let's create an analysis directory for this step, and copy that data:
 
-~~~bash
+```bash
 mkdir -p $CNA_WORKSPACE/analysis/exome/mutationseq
 cd $CNA_WORKSPACE/analysis/exome/mutationseq
 cp /home/ubuntu/CourseData/CG_data/Module4/analysis/exome/mutationseq/* $CNA_WORKSPACE/analysis/exome/mutationseq
-~~~
+```
 
 The file `HCC1395_mutationseq.vcf` contains the raw output of MutationSeq, which was run in single-sample mode on the normal exome. This output was processed using a custom script to produce the format needed for Titan. Let's take a look at the processed data:
 
-~~~bash
+```bash
 column -t HCC1395_mutationseq_postprocess_filtered.txt | less -S
-~~~
+```
 
 |   chr  | position  |  ref  | refCount |  Nref | NrefCount |
 |--------|-----------|-------|----------|-------|-----------|
@@ -398,14 +398,14 @@ In order to correct the binned read counts for GC bias and mappability, we need 
 
 The two files that were generated for you in this step are the GC content file and mappability file, which you can find in the `ref_data` directory:
 
-~~~bash
+```bash
 ls $CNA_WORKSPACE/ref_data/*.wig
-~~~
+```
 
-~~~bash
+```bash
 Homo_sapiens.GRCh37.75.dna.primary_assembly.gc.wig
 Homo_sapiens.GRCh37.75.dna.primary_assembly.fa.map.ws_1000.wig
-~~~
+```
 
 Note that if you want to use a different reference genome or a different bin size for your CNA analysis, you will need to generate new files specific to that reference and bin size.
 
@@ -417,7 +417,7 @@ The Titan R package includes a set of functions you can use to carry out CNA ana
 
 Launch the analysis as follows:
 
-~~~bash
+```bash
 mkdir -p $CNA_WORKSPACE/analysis/exome/titan
 cd $CNA_WORKSPACE/analysis/exome/titan
 Rscript $CNA_WORKSPACE/scripts/run_titan.R \
@@ -434,7 +434,7 @@ Rscript $CNA_WORKSPACE/scripts/run_titan.R \
 	--normal_con 0.0 \
 	> run_titan.log \
 	2> run_titan.err &
-~~~
+```
 
 Some important parameters to consider:
 
@@ -445,39 +445,39 @@ Some important parameters to consider:
 
 Note that the workflow for running Titan with whole-genome data is the same as running it on exome data. The only difference is that you don't need to specify the capture region when doing whole-genome analysis. In the script we used, you would need to modify the following line:
 
-~~~bash
+```bash
 cnData <- correctReadDepth(tumWig, normWig, gcWig, mapWig, genomeStyle = "NCBI", targetedSequence = exomeCaptureSpaceDf)
-~~~
+```
 
 If you want to analyze the entire genome, simply remove the last parameter specifying the target region: `targetedSequence = exomeCaptureSpaceDf`. Everything else should be the same.
 
 Now, just like the OncoSNP analysis, the `&` symbol will cause the job to run in the background. You can check the progress of the job with:
 
-~~~bash
+```bash
 less -S run_titan.log
-~~~
+```
 
 Press `q` to exit the less program when you are finished viewing the log. This will take a few minutes to run. Take this time to review the R script itself. Please ask any questions you may have regarding the content of the script:
 
-~~~bash
+```bash
 less $CNA_WORKSPACE/scripts/run_titan.R
-~~~
+```
 
 When the analysis is complete, this script will generate a copy number plot for each chromosome using the default functions provided in the Titan package. This requires X11 forwarding and may fail since we are working on a server. For demonstration purposes, the plots can be copied as follows:
 
-~~~bash
+```bash
 cp /home/ubuntu/CourseData/CG_data/Module4/analysis/exome/titan/*.png $CNA_WORKSPACE/analysis/exome/titan
-~~~
+```
 
 Finally, a Titan segment file and an IGV compatible `.seg` file can be generated using a Perl script:
 
-~~~bash
+```bash
 perl $CNA_WORKSPACE/scripts/createTITANsegmentfiles.pl \
 	-id=test \
 	-infile=$CNA_WORKSPACE/analysis/exome/titan/HCC1395.titan_results.txt \
 	-outfile=$CNA_WORKSPACE/analysis/exome/titan/HCC1395.titan_results.segs.txt \
 	-outIGV=$CNA_WORKSPACE/analysis/exome/titan/HCC1395.titan_results.segs
-~~~
+```
 
 The `.seg` files can be opened in IGV to compare multiple samples. See the [IGV website](https://software.broadinstitute.org/software/igv/SEG) for more details regarding the `.seg` format.
 
@@ -493,24 +493,24 @@ We will also look at Titan profiles from two xenograft passages derived from thi
 
 We ran Titan on the whole-genome `.bam` files from these three tumours, with three separate runs specifying either 1, 2, or 3 clonal clusters. You can copy the plots and parameter files as follows (actual Titan output is not provided to protect patient confidentiality):
 
-~~~bash
+```bash
 cp /home/ubuntu/CourseData/CG_data/Module4/module4_cna_plots.zip $CNA_WORKSPACE
 unzip module4_cna_plots.zip
-~~~
+```
 
 You can then download the entire zip file or individual plots from your browser (XX is your student number):
 
-~~~bash
+```bash
 http://cbwXX.dyndns.info/Module4/module4_cna_plots
-~~~
+```
 
 Titan uses the expectation-maximization (EM) algorithm to find the most likely values of the parameters. When given a more complex model (i.e. more clusters), this approach can over-fit and assign higher likelihood to runs with more clusters. So in order to choose the number of clusters, it is recommended not just to look at the likelihood, but at the DBW validity index which Titan provides at the end of the parameter file (lower index values are better):
 
-~~~bash
+```bash
 less $CNA_WORKSPACE/module4_cna_plots/SA501/SA501T-49X/SA501T-49X_cluster1_params.txt
-~~~
+```
 
-~~~
+```
 Normal contamination estimate:	0.26
 Average tumour ploidy estimate:	1.88
 Clonal cluster cellular prevalence Z=1:	0.9974
@@ -528,15 +528,15 @@ S_Dbw validity index (AllelicRatio):	0.0204
 S_Dbw dens.bw (Both):	0.0112 
 S_Dbw scat (Both):	0.0305 
 S_Dbw validity index (Both):	0.0417 
-~~~
+```
 
 We summarized the results of the three runs with different cluster numbers in the optimal clusters file:
 
-~~~bash
+```bash
 less $CNA_WORKSPACE/module4_cna_plots/SA501/SA501T-49X/SA501T-49X_titan_optimal_clusters.txt
-~~~
+```
 
-~~~
+```
 case: SA501T num_clusters: 1 Ploidy: 1.88 DBW validity index: 0.0417
 case: SA501T num_clusters: 2 Ploidy: 1.88 DBW validity index: 0.0585
 case: SA501T num_clusters: 3 Ploidy: 1.88 DBW validity index: 0.0585
@@ -544,17 +544,17 @@ case: SA501T num_clusters: 3 Ploidy: 1.88 DBW validity index: 0.0585
 optimal Clusters: (1, '1.88')
 optimal DBW index: 0.0417 
 ********************************************************************************
-~~~
+```
 
 You can see that Titan predicts one major copy number population in this patient tumour sample. 
 
 Now take a look at the summary file for the xenograft tumour SA501X3F:
 
-~~~bash
+```bash
 less $CNA_WORKSPACE/module4_cna_plots/SA501/SA501X3F-23X/SA501X3F-23X_titan_optimal_clusters.txt
-~~~
+```
 
-~~~
+```
 case: SA501X3F num_clusters: 1 Ploidy: 1.79 DBW validity index: 0.0843
 case: SA501X3F num_clusters: 2 Ploidy: 1.79 DBW validity index: 0.0725
 case: SA501X3F num_clusters: 3 Ploidy: 1.79 DBW validity index: 0.076
@@ -562,7 +562,7 @@ case: SA501X3F num_clusters: 3 Ploidy: 1.79 DBW validity index: 0.076
 optimal Clusters: (2, '1.79')
 optimal DBW index: 0.0725 
 ********************************************************************************
-~~~
+```
 
 Titan predicts that this sample has two major copy number clones. For SA501X4F, Titan also predicts a single major copy number clone. We will use the results from these runs in the question section below. 
 
@@ -667,9 +667,9 @@ http://cbwXX.dyndns.info:8080
 
 Where the XX is your student number. Now click on the Console, and run this to set the working directory:
 
-~~~r
+```r
 setwd("/home/ubuntu/workspace/Module4/analysis/exome/titan")
-~~~
+```
 
 Setting the working directory allows us to open and write files in a particular location without specifying the full path. In general, using relative rather than absolute paths is not a good idea, since it makes the code harder to transfer to others. However, for the sake of this tutorial we will do this for convenience. 
 
