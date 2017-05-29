@@ -112,10 +112,16 @@ Note: you should be using `rm -i` to avoid accidentally deleting a wanted file.
 * grep: pattern matching
 
 ```
-grep
+grep TTT test.fasta
 ```
 
-* man: get the manual explanation of a function
+You can use the pipe character `|` to string commands together:
+
+```
+head test.fasta | grep TTT
+```
+
+***
 
 ## R Review
 
