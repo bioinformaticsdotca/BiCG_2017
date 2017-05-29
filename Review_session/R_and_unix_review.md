@@ -30,18 +30,91 @@ Read these [directions](http://bioinformaticsdotca.github.io/AWS_setup) for info
 Basic commands:
 
 * ls: list the files in the directory  
+
+```
+ls
+```
+
 * mkdir: make a new directory  
-* cd: change directories  
-* pwd: print working directory  
+
+```
+mkdir Review_Session
+```
+
+* cd: change directories; 
+
+```
+cd Review_Session
+```
+
+`cd ...` will take you up one directory.
+
+* pwd: print working directory 
+
+```
+pwd
+```
+
 * echo: print what it typed  
+
+```
+echo 'Hello World!' > test.txt
+```
+
 * cat: print the contents of a file  
+
+```
+cat test.txt
+```
+
 * curl: used to get contents from a URL  
+
+```
+curl https://raw.githubusercontent.com/bioinformaticsdotca/Genomic_Med_2017/master/test.fasta > test.fasta
+curl https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/Review_session/Gene_R_example.csv > Gene_R_Example.csv
+```
+
 * head and tail: get the beginning or end of a file  
+
+```
+head test.fasta
+tail test.fasta
+```
+
 * less and more: look at the contents of a file  
-* cp: copy  
+
+```
+less test.fasta
+```
+
+To exit `less`, press `q`.
+
+* cp: copy 
+
+```
+cp test.fasta test2.fasta
+```
+
 * mv: move  
+
+```
+mv test2.fasta test3.fasta
+```
+
 * rm: remove  
-* grep: pattern matching  
+
+```
+rm test3.fasta
+```
+
+Note: you should be using `rm -i` to avoid accidentally deleting a wanted file.  
+
+* grep: pattern matching
+
+```
+grep
+```
+
 * man: get the manual explanation of a function
 
 ## R Review
@@ -61,6 +134,8 @@ RStudio notebooks are written in R Markdown and contain text that can be execute
 To start a new notebook, `File -> New File -> R Notebook`.  
 
 To run code chunks, place your cursor within the code chunk and press *Cmd+Shift+Enter* on Mac and  *Crtl+Shift+Enter* or click the green triangle run button.  The output of the chunk appears below the code chunk.  
+
+Copy the code [here](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/Review_session/R_review_notebook.Rmd) into the notebook you have created.
 
 ### Getting Around
 
