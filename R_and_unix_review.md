@@ -320,6 +320,16 @@ plot(x=gene_example$Control, y=gene_example$Treated,
 	type = "b",
 	las = 1
 	)
+	
+boxplot(gene_example[,2:3],
+	width = c(3,1),
+	col = "red",
+	border = "dark blue",
+	names = c("Control", "Treatment"),
+	main = "My boxplot",
+	notch = TRUE,
+	horizontal = TRUE
+	)
   
   dev.off()
-  ```
+```
