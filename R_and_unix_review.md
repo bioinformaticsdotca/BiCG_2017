@@ -52,6 +52,8 @@ Basic commands:
 * In the URL bar, enter *http://cbwxx.dyndns.info:8080* replacing *xx* with your provided student number.  
 * Enter the supplied username and password.  
 
+### RStudio Notebooks
+
 ### Getting Around
 
 #### The Hard Way
