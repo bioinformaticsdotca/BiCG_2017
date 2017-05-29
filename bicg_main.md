@@ -20,7 +20,7 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 # Class Photo
 
-Coming soon!  
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/CBW-May-29.jpeg?raw=true" alt="Class Photo" width="750" />  
 
 *** 
 # Day 1 <a id="day1"></a>
