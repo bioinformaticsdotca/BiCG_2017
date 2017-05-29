@@ -58,7 +58,7 @@ Coming soon!
 [Assignment](https://bioinformaticsdotca.github.io/bicg-2017-Unix_and_R)  
 
 * [Data file 1](https://raw.githubusercontent.com/bioinformaticsdotca/Genomic_Med_2017/master/test.fasta)  
-* [Data file 2](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/Gene_R_example.txt)  
+* [Data file 2](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/Review_session/Gene_R_example.csv)  
 
 ***
 
