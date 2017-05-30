@@ -140,6 +140,8 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 [Lab Practical - Prediction](https://bioinformaticsdotca.github.io/BiCG_2017_module4_genefusions_prediction)
 
+[Lab Practical - Exploration](https://bioinformaticsdotca.github.io/BiCG_2017_module4_genefusions_exploration)
+
 [Lab Practical - Visualization](https://bioinformaticsdotca.github.io/BiCG_2017_module4_genefusions_visualization)
 
 ## Module 8: Variants to Networks
