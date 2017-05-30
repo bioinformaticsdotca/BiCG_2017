@@ -716,3 +716,5 @@ For SA501X3F, you can clearly see that the BAF values for chromosome X are "shif
 
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/SA501X4F_cluster1_plot.png?raw=true" alt="SA501X4F_cluster1_plot" width="750" /> 
+
+***
