@@ -37,7 +37,7 @@ cd Module4
 
 In this section, we will set some environment variables to help facilitate the execution of commands. These variables will store the locations of some important paths we will need.
 
-> Note: these environment variables will only persist in the current session. If you log out and log back into the server, you will have to set these variables again.
+*Note: these environment variables will only persist in the current session. If you log out and log back into the server, you will have to set these variables again.*
 
 For convinience, we first store an environment variable with the path to your Module 4 working directory. 
 ```bash
