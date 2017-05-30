@@ -271,10 +271,10 @@ We notice that in this case, both OncoSNP runs converged to a very similar value
 column -t $CNA_WORKSPACE/analysis/snp6/oncosnp/HCC1395.qc | less -S
 ```
 
-| LogRRatioShift | NormalContent | Copy Number (Average) | Log-likelihood | OutlierRate | LogRRatioStd | BAlleleFreqStd | PloidyNo |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| -0.1703        | 0.0           | 1.9                   | 1028.69253     | 0.011       | 0.271        | 0.042          | 1        |
-| -0.1166        | 0.0           | 1.9                   | 973.90146      | 0.011       | 0.271        | 0.042          | 2        |
+| LogRRatioShift | NormalContent | Copy Number (Average) | Log-likelihood | OutlierRate | LogRRatioStd | BAlleleFreqStd | PloidyNo |  
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |  
+| -0.1703        | 0.0           | 1.9                   | 1028.69253     | 0.011       | 0.271        | 0.042          | 1        |  
+| -0.1166        | 0.0           | 1.9                   | 973.90146      | 0.011       | 0.271        | 0.042          | 2        |  
 
 OncoSNP also generates a `.cnvs` file, which contains the smoothed segments with an associated copy number prediction. One column of particular interest is the "Tumour State" column. This is an integer >= 1 which represents the most likely OncoSNP copy number state for that segment. A table explaining these states is found in the [OncoSNP paper](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-9-r92).
 
@@ -282,14 +282,14 @@ OncoSNP also generates a `.cnvs` file, which contains the smoothed segments with
 column -t $CNA_WORKSPACE/analysis/snp6/oncosnp/HCC1395.cnvs | less -S
 ```
 
-| Chromosome | StartPosition | EndPosition | CopyNumber | LOH | Rank | Loglik       | nProbes | NormalFraction | TumourState | PloidyNo | MajorCopyNumber | MinorCopyNumber |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| 21         | 10913441      | 11039570    | 2          | 0   | 1    | 11.854023    | 8       | 0.0            | 3           | 1        | 1               | 1               |
-| 21         | 14369207      | 48084747    | 2          | 0   | 1    | 31009.802290 | 12484   | 0.0            | 3           | 1        | 1               | 1               |
-| 21         | 38323528      | 40196987    | 1          | 1   | 3    | 509.607107   | 737     | 0.0            | 2           | 1        | 1               | 0               |
-| 21         | 47133549      | 48084747    | 3          | 0   | 3    | 292.046149   | 265     | 0.0            | 4           | 1        | 2               | 1               |
-| 21         | 43993615      | 44503173    | 2          | 2   | 4    | 56.258568    | 200     | 0.0            | 17          | 1        | 2               | 0               |
-| 21         | 14369207      | 14775085    | 3          | 0   | 5    | 5.539195     | 23      | 0.0            | 4           | 1        | 2               | 1               |
+| Chromosome | StartPosition | EndPosition | CopyNumber | LOH | Rank | Loglik | nProbes | NormalFraction | TumourState | PloidyNo | MajorCopyNumber | MinorCopyNumber |  
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |  
+| 21         | 10913441      | 11039570    | 2          | 0   | 1    | 11.854023    | 8       | 0.0            | 3           | 1        | 1               | 1               |  
+| 21         | 14369207      | 48084747    | 2          | 0   | 1    | 31009.802290 | 12484   | 0.0            | 3           | 1        | 1               | 1               |  
+| 21         | 38323528      | 40196987    | 1          | 1   | 3    | 509.607107   | 737     | 0.0            | 2           | 1        | 1               | 0               |  
+| 21         | 47133549      | 48084747    | 3          | 0   | 3    | 292.046149   | 265     | 0.0            | 4           | 1        | 2               | 1               |  
+| 21         | 43993615      | 44503173    | 2          | 2   | 4    | 56.258568    | 200     | 0.0            | 17          | 1        | 2               | 0               |  
+| 21         | 14369207      | 14775085    | 3          | 0   | 5    | 5.539195     | 23      | 0.0            | 4           | 1        | 2               | 1               |  
 
 
 The final interesting file that OncoSNP produces is a compressed file with plots `HCC1395.*.ps.gz`.  Download the plots you produced by entering this address in your browser:
