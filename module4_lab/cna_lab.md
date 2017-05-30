@@ -52,7 +52,7 @@ echo $CNA_WORKSPACE
 Now let's create links in this CNA working directory to: (1) the data we will use, (2) the install directory, (3) some helper scripts we will need, and (4) a directory with reference genome files.
 
 ```bash
-ln -s /home/ubuntu/CourseData/CG_data/data $CNA_WORKSPACE		# link to data
+ln -s /home/ubuntu/CourseData/CG_data/Module4/data $CNA_WORKSPACE	# link to data
 ln -s /home/ubuntu/CourseData/CG_data/Module4/install $CNA_WORKSPACE	# link to install directory
 ln -s /home/ubuntu/CourseData/CG_data/Module4/scripts $CNA_WORKSPACE	# link to scripts
 ln -s /home/ubuntu/CourseData/CG_data/Module4/ref_data $CNA_WORKSPACE	# link to reference genome data
