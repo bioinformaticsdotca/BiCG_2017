@@ -1,6 +1,6 @@
 ---
 layout: tutorial_page
-permalink: /bicg_2017
+permalink: /integrative_assignemnt
 title: BiCG
 header1: Bioinformatics for Cancer Genomics 2017
 header2: Integrative Assignment using Galaxy
@@ -61,7 +61,18 @@ Now that our data is uploaded, we can begin our analysis. __Normally we'd begin 
 
 Let's begin with our transcript alignment/assembly using Hisat. Navigate to the *NGS: RNA Analysis* button on the left hand side, click it, find *Hisat*, and click on that. Alternatively, you can search for *Hisat* in the search tools bar.
 
-Now to run Hisat, we're going to make a few modifications
+Now to run Hisat, we're going to make a few modifications. Change:
+*Input data format* to FASTA
+*Single end or paired end?* to Individual paired reads
+*Forward reads* to multiple datasets
+*Reverse reads* to multiple datasets
+*Source for the reference genome to align against* to Use a genome from history
+*Select the reference genome* to 14: Homo_sapiens.GRCh38.dna.chromosome.9.fa
+
+Now in the forward reads, we're going to go ahead and select all our read1 reads. For the reverse reads, we're going to select the read2 reads.
+
+<img src="" alt="Get data" width="500" />
+
 
 
 
