@@ -1,6 +1,6 @@
 ---
 layout: tutorial_page
-permalink: /bicg_2017
+permalink: /bicg_2017_lab_5
 title: BiCG
 header1: Bioinformatics for Cancer Genomics 2017
 header2: Lab Module 5 - Somatic Mutations and Annotation
