@@ -282,7 +282,6 @@ OncoSNP also generates a `.cnvs` file, which contains the smoothed segments with
 column -t $CNA_WORKSPACE/analysis/snp6/oncosnp/HCC1395.cnvs | less -S
 ```
 
-<div class="table-wrapper" markdown="block">
 | Chromosome | StartPosition | EndPosition | CopyNumber | LOH | Rank | Loglik       | nProbes | NormalFraction | TumourState | PloidyNo | MajorCopyNumber | MinorCopyNumber |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | 21         | 10913441      | 11039570    | 2          | 0   | 1    | 11.854023    | 8       | 0.0            | 3           | 1        | 1               | 1               |
@@ -291,7 +290,7 @@ column -t $CNA_WORKSPACE/analysis/snp6/oncosnp/HCC1395.cnvs | less -S
 | 21         | 47133549      | 48084747    | 3          | 0   | 3    | 292.046149   | 265     | 0.0            | 4           | 1        | 2               | 1               |
 | 21         | 43993615      | 44503173    | 2          | 2   | 4    | 56.258568    | 200     | 0.0            | 17          | 1        | 2               | 0               |
 | 21         | 14369207      | 14775085    | 3          | 0   | 5    | 5.539195     | 23      | 0.0            | 4           | 1        | 2               | 1               |
-</div>
+
 
 The final interesting file that OncoSNP produces is a compressed file with plots `HCC1395.*.ps.gz`.  Download the plots you produced by entering this address in your browser:
 
@@ -624,12 +623,12 @@ SA501X4F (whole-genome sequencing at 38X depth), chromosome X:
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module4_lab/images/SA501X4F-38X_cluster1_chrX.png?raw=true" alt="SA501X4F-38X_cluster1_chrX" width="750" /> 
 
 Answers:
-(1) SA501X3F was sequenced at lower depth which makes the BAF values more noisy.  
-(2) SA501T has normal cell contamination. Titan looks at BAF values in the tumour for positions that are heterozygous in the normal, so if normal cells are present, they will shift the BAF values towards 0.5. 
-(3) About 25%. See the "Z1" line in the "Cellular Prevalence" plot. Of course, a more precise value can be found in the parameter file (26%). 
-(4) About 85% and 15% based on the "Z2" line in the "Cellular Prevalence" plot. The bottom "Subclone" plot actually shows the estimated values (86% and 14%). 
-(5) Chromosome X.
-(6) A sub-clone with only one copy of chromosome X emerges and becomes dominant over time. The original patient tumour SA501T has one major population, which has 2 copies of chromosome X. In the third-passage xenograft SA501X3F, most of the population has lost one copy of X, leading to loss-of-heterozygosity and an "outward" shift in BAF values. Only a minor population (about 15%) of cells with 2 copies of chromosome X remain. By the fourth-passage SA501X4F, the ancestral population with two copies of X is no longer detectable, and Titan predicts one major population with a single copy of X. 
+(1) SA501X3F was sequenced at lower depth which makes the BAF values more noisy.    
+(2) SA501T has normal cell contamination. Titan looks at BAF values in the tumour for positions that are heterozygous in the normal, so if normal cells are present, they will shift the BAF values towards 0.5.   
+(3) About 25%. See the "Z1" line in the "Cellular Prevalence" plot. Of course, a more precise value can be found in the parameter file (26%).   
+(4) About 85% and 15% based on the "Z2" line in the "Cellular Prevalence" plot. The bottom "Subclone" plot actually shows the estimated values (86% and 14%).   
+(5) Chromosome X.  
+(6) A sub-clone with only one copy of chromosome X emerges and becomes dominant over time. The original patient tumour SA501T has one major population, which has 2 copies of chromosome X. In the third-passage xenograft SA501X3F, most of the population has lost one copy of X, leading to loss-of-heterozygosity and an "outward" shift in BAF values. Only a minor population (about 15%) of cells with 2 copies of chromosome X remain. By the fourth-passage SA501X4F, the ancestral population with two copies of X is no longer detectable, and Titan predicts one major population with a single copy of X.   
 
 ### Comparison with Single Cell Sequencing
 
