@@ -1,12 +1,12 @@
 ---
 layout: tutorial_page
-permalink: /BiCG_2017
-title: bioinformaticsdotca
+permalink: /bicg_2017
+title: BiCG
 header1: Bioinformatics for Cancer Genomics 2017
 header2: Lab Module 5 - Somatic Mutations and Annotation
-image: /site_images/CBW-CSHL-graphic-square.png
+image: /site_images/CBW_cancerDNA_icon-16.jpg
 home:
-https://bioinformaticsdotca/BiCG_2017/tree/master/module5
+https:https://bioinformaticsdotca.github.io//bicg_2017
 ---
 
 # Lab Module 5 - Somatic Mutations and Annotation
