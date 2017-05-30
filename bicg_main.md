@@ -137,8 +137,10 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 ### Gene Fusions
 
 [Lab Practical - Installation](https://bioinformatics.ca/BiCG_2017_module4_genefusions_installation)
-[Lab Practical - Installation](https://bioinformatics.ca/BiCG_2017_module4_genefusions_prediction)
-[Lab Practical - Installation](https://bioinformatics.ca/BiCG_2017_module4_genefusions_visualization)
+
+[Lab Practical - Prediction](https://bioinformatics.ca/BiCG_2017_module4_genefusions_prediction)
+
+[Lab Practical - Visualization](https://bioinformatics.ca/BiCG_2017_module4_genefusions_visualization)
 
 ## Module 8: Variants to Networks
 
