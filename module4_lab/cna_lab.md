@@ -79,12 +79,12 @@ INSTALL_DIR=$CNA_WORKSPACE/install
 Now we will specify the directories where specific files and programs are installed, relative to the install directory. 
 
 ```bash
-GC_DIR=$INSTALL_DIR/gc_content/b37			# GC content files for the reference genome
-GW6_DIR=$INSTALL_DIR/penncnv/gw6			# Affymetrix SNP6.0 normalization files
-SNP6_CDF=$INSTALL_DIR/apt/GenomeWideSNP_6.cdf		# Affymetrix SNP6.0 cel definition file (CDF)
-APT_DIR=$INSTALL_DIR/apt/apt-1.19.0-x86_64-intel-linux	# Affymetrix Power Tools (APT) program
-MCR_DIR=$INSTALL_DIR/matlab_mcr/v82			# Matlab MCR
-ONCOSNP_DIR=$INSTALL_DIR/oncosnp			# OncoSNP program
+GC_DIR=$INSTALL_DIR/gc_content/b37
+GW6_DIR=$INSTALL_DIR/penncnv/gw6
+SNP6_CDF=$INSTALL_DIR/apt/GenomeWideSNP_6.cdf
+APT_DIR=$INSTALL_DIR/apt/apt-1.19.0-x86_64-intel-linux
+MCR_DIR=$INSTALL_DIR/matlab_mcr/v82
+ONCOSNP_DIR=$INSTALL_DIR/oncosnp
 ```
 
 You are now ready to start the analysis.
