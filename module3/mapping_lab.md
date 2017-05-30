@@ -110,9 +110,9 @@ samtools mpileup -f ~/CourseData/CG_data/Module3/human_g1k_v37.fasta -r 9:14,196
 Load the data into IGV by performing the following:
 
 ```
-   Open IGV and change the genome from hg19 to 'human_g1k_v37'
+   Open IGV
    Choose 'Load from URL' from the file menu
-   Type: http://cbw#.dyndns.info/Module3/tumour.sorted.bam where # is your student ID
+   Type: http://cbw#.dyndns.info/Module3-mapping/tumour.sorted.bam where # is your student ID
    Navigate to 9:14,196,087
 ```
 
