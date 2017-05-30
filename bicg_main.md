@@ -130,7 +130,15 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 [Lecture](https://bioinformatics.ca/bicg-2017-mod7)
 
-[Lab Practical]()  
+### Rearrangements
+
+[Lab Practical](https://bioinformatics.ca/BiCG_2017_module4_rearrangements)
+
+### Gene Fusions
+
+[Lab Practical - Installation](https://bioinformatics.ca/BiCG_2017_module4_genefusions_installation)
+[Lab Practical - Installation](https://bioinformatics.ca/BiCG_2017_module4_genefusions_prediction)
+[Lab Practical - Installation](https://bioinformatics.ca/BiCG_2017_module4_genefusions_visualization)
 
 ## Module 8: Variants to Networks
 
