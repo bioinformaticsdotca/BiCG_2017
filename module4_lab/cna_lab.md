@@ -175,7 +175,7 @@ less -S $CNA_WORKSPACE/analysis/snp6/penncnv/gw6.GSM888107
 ```
 
 | Name          | Chr | Position | GSM888107.CEL Log R Ratio | GSM888107.CEL.B Allele Freq |
-|---------------|-----|----------|---------------------------|-----------------------------|
+| :---: | :---: | :---: | :---: | :---: |
 | SNP_A-2131660 | 1   | 1156131  | 0.3040                    | 0.0501                      |
 | SNP_A-1967418 | 1   | 2234251  | -0.0355                   | 1.0000                      |
 | SNP_A-1969580 | 1   | 2329564  | -0.2625                   | 0.9403                      |
@@ -272,7 +272,7 @@ column -t $CNA_WORKSPACE/analysis/snp6/oncosnp/HCC1395.qc | less -S
 ```
 
 | LogRRatioShift | NormalContent | Copy Number (Average) | Log-likelihood | OutlierRate | LogRRatioStd | BAlleleFreqStd | PloidyNo |
-|----------------|---------------|-----------------------|----------------|-------------|--------------|----------------|----------|
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | -0.1703        | 0.0           | 1.9                   | 1028.69253     | 0.011       | 0.271        | 0.042          | 1        |
 | -0.1166        | 0.0           | 1.9                   | 973.90146      | 0.011       | 0.271        | 0.042          | 2        |
 
@@ -283,7 +283,7 @@ column -t $CNA_WORKSPACE/analysis/snp6/oncosnp/HCC1395.cnvs | less -S
 ```
 
 | Chromosome | StartPosition | EndPosition | CopyNumber | LOH | Rank | Loglik       | nProbes | NormalFraction | TumourState | PloidyNo | MajorCopyNumber | MinorCopyNumber |
-|------------|---------------|-------------|------------|-----|------|--------------|---------|----------------|-------------|----------|-----------------|-----------------|
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | 21         | 10913441      | 11039570    | 2          | 0   | 1    | 11.854023    | 8       | 0.0            | 3           | 1        | 1               | 1               |
 | 21         | 14369207      | 48084747    | 2          | 0   | 1    | 31009.802290 | 12484   | 0.0            | 3           | 1        | 1               | 1               |
 | 21         | 38323528      | 40196987    | 1          | 1   | 3    | 509.607107   | 737     | 0.0            | 2           | 1        | 1               | 0               |
@@ -383,7 +383,7 @@ column -t HCC1395_mutationseq_postprocess_filtered.txt | less -S
 ```
 
 |   chr  | position  |  ref  | refCount |  Nref | NrefCount |
-|--------|-----------|-------|----------|-------|-----------|
+| :---: | :---: | :---: | :---: | :---: | :---: |
 |   20   |  126529   |   G   |     5    |   X   |     5     |
 |   20   |  138179   |   C   |     3    |   X   |     6     |
 |   20   |  168466   |   T   |     37   |   X   |     32    |
@@ -685,7 +685,7 @@ Go to File -> Open File and choose the file you want to work with. Please feel f
 Details of the Titan state calls can be found in the Supplement of the [Titan paper](http://genome.cshlp.org/content/24/11/1881.long) (Supplementary Table 14). A simplified summary is below:
 
 | Titan Call | Definition                                |
-|------------|-------------------------------------------|
+| :---: | :---: |
 |    HOMD    | Homozygous deletion                       |
 |    DLOH    | Hemizygous deletion LOH                   |
 |    NLOH    | Copy neutral LOH                          |
