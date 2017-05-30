@@ -721,4 +721,3 @@ For SA501X3F, you can clearly see that the BAF values for chromosome X are "shif
 
 ***
 
-***
