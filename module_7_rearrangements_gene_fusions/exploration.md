@@ -1,10 +1,12 @@
 ---
-layout: post3
+layout: tutorial_page
+permalink: /BiCG_2017_module4_genefusions_exploration
 title: Bioinformatics for Cancer Genomics 2017 Gene Fusions Tutorial
 header1: Bioinformatics for Cancer Genomics 2017
 header2: Gene Fusions Tutorial
-image: fusions.png
+image: CBW_cancerDNA_icon-16.jpg
 ---
+
 # Data Exploration
 
 In the following section we will use the ucsc genome browser's [online blat](http://genome.ucsc.edu/cgi-bin/hgBlat?command=start) to explore a number of example positive and negative fusion transcripts.

@@ -1,10 +1,11 @@
 ---
-layout: post3
-permalink: /bioinformatics_for_cancer_genomics_2017/rearrangement
+layout: tutorial_page
+permalink: /BiCG_2017_module4_rearrangements
 title: Bioinformatics for Cancer Genomics 2017 Genome Rearrangement Tutorial
 header1: Bioinformatics for Cancer Genomics 2017
 header2: Genome Rearrangement Tutorial
 image: CBW_cancerDNA_icon-16.jpg
+home: https://bioinformaticsdotca.github.io/bicg_2017
 ---
 
 # General Setup

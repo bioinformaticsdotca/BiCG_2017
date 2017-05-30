@@ -1,9 +1,10 @@
 ---
-layout: post3
+layout: tutorial_page
+permalink: /BiCG_2017_module4_genefusions_installation
 title: Bioinformatics for Cancer Genomics 2017 Gene Fusions Tutorial
 header1: Bioinformatics for Cancer Genomics 2017
-header2: Gene Fusions Tutorial
-image: fusions.png
+header2: Gene Fusions Tutorial - Installation
+image: CBW_cancerDNA_icon-16.jpg
 ---
 
 # General installation for CBW tutorial
