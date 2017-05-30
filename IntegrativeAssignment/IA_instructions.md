@@ -32,8 +32,8 @@ cbwXX.dyndns.info/IntegrativeAssignment/
 
 where XX is your student number. Navigate into the _fasta_ folder and download the files present:
 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/tree/master/IntegrativeAssignment/Images/Download00.JPG" alt="01" width="750" /> 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/tree/master/IntegrativeAssignment/Images/Download01.JPG" alt="02" width="750" /> 
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/tree/master/IntegrativeAssignment/Images/Download00.JPG?raw=true" alt="01" width="750" /> 
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/tree/master/IntegrativeAssignment/Images/Download01.JPG?raw=true" alt="02" width="750" /> 
 
 Since our example data is only a subset of reads that map to chromosome 9, we're going to download a modified reference and gtf file. Please find them attached [here] (link to files).
 
