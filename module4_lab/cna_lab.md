@@ -282,6 +282,7 @@ OncoSNP also generates a `.cnvs` file, which contains the smoothed segments with
 column -t $CNA_WORKSPACE/analysis/snp6/oncosnp/HCC1395.cnvs | less -S
 ```
 
+<div class="table-wrapper" markdown="block">
 | Chromosome | StartPosition | EndPosition | CopyNumber | LOH | Rank | Loglik       | nProbes | NormalFraction | TumourState | PloidyNo | MajorCopyNumber | MinorCopyNumber |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | 21         | 10913441      | 11039570    | 2          | 0   | 1    | 11.854023    | 8       | 0.0            | 3           | 1        | 1               | 1               |
@@ -290,6 +291,7 @@ column -t $CNA_WORKSPACE/analysis/snp6/oncosnp/HCC1395.cnvs | less -S
 | 21         | 47133549      | 48084747    | 3          | 0   | 3    | 292.046149   | 265     | 0.0            | 4           | 1        | 2               | 1               |
 | 21         | 43993615      | 44503173    | 2          | 2   | 4    | 56.258568    | 200     | 0.0            | 17          | 1        | 2               | 0               |
 | 21         | 14369207      | 14775085    | 3          | 0   | 5    | 5.539195     | 23      | 0.0            | 4           | 1        | 2               | 1               |
+</div>
 
 The final interesting file that OncoSNP produces is a compressed file with plots `HCC1395.*.ps.gz`.  Download the plots you produced by entering this address in your browser:
 
