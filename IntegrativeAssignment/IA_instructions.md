@@ -1,5 +1,5 @@
 ---
-layout: workshop_main_5day
+layout:tutorial_page
 permalink: /bicg_2017
 title: BiCG
 header1: Integrative Assignment using Galaxy
@@ -32,8 +32,8 @@ cbwXX.dyndns.info/IntegrativeAssignment/
 
 where XX is your student number. Navigate into the _fasta_ folder and download the files present:
 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/tree/master/IntegrativeAssignment/Images/Download00.JPG?raw=true" alt="01" width="750" /> 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/tree/master/IntegrativeAssignment/Images/Download01.JPG?raw=true" alt="02" width="750" /> 
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Download00.JPG?raw=true" alt="Setup 1" width="500" /> 
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Download01.JPG?raw=true" alt="Setup 2" width="500" /> 
 
 Since our example data is only a subset of reads that map to chromosome 9, we're going to download a modified reference and gtf file. Please find them attached [here] (link to files).
 
