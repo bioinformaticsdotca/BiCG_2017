@@ -37,24 +37,7 @@ Now to be able to download, we need to change the permissions of the reference f
 chmod ugo+wr IntegrativeAssignemnt/refs/*
 ```
 
-Now open a web browser and go to the address:
-
-```
-cbwXX.dyndns.info/IntegrativeAssignment/
-```
-
-where XX is your student number. Navigate into the _IntegrativeAssignment_ folder followed by the _fasta_ folder and download the files present:
-
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Download00.JPG?raw=true" alt="Setup 1" width="500" /> 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Download01.JPG?raw=true" alt="Setup 2" width="500" /> 
-
-Since these reads have been taken to only map to chromosome 9, we're also going to download the chromosome 9 fasta file and the chromosome 9 gtf file.
->The GTF file holds information on the gene structure, and is used to determine the abundance of each gene or transcript.
-
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/I_setup_ref1.JPG?raw=true" alt="Setup 3" width="500" />
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/I_setup_ref2.JPG?raw=true" alt="Setup 3" width="500" />
-
-Once these files have been downloaded, we can begin to upload them onto the Galaxy server. Visit the following link: https://usegalaxy.org. You'll be greeted by the following page, the main contents of which are as follows:
+We can now navigate to Galaxy server by following the link: https://usegalaxy.org. You'll be greeted by the following page, the main contents of which are as follows:
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy01.JPG?raw=true" alt="Setup 3" width="1000" />
 
@@ -69,16 +52,41 @@ Follow the following steps below to register for Galaxy:
 
 ## Uploading data
 
-Press on the *Get Data* button on the left hand side, followed by the *Upload File* button. Press on *Choose local file*, and select the fasta files, gtf, and modified reference that were recently downloaded. Alternatively, you can drag and drop the files from your computer onto the window. Leave all options on default, except __make sure to change the type of file in for our gtf file to a gtf__. Although the order of upload won't make much of a difference, follow the images below and upload the gtf and reference fasta first, and once completed, upload our tumour and normal fasta files.
+To compensate on time, we're going to upload our data directly from the AWS to the Galaxy server by going through the following steps:
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy02.JPG?raw=true" alt="Get data" width="1000" /> 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy03.JPG?raw=true" alt="Upload file" width="1000" /> 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy04.JPG?raw=true" alt="Choose local file" width="1000" /> 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy05.JPG?raw=true" alt="Choose local file" width="1000" /> 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy06.JPG?raw=true" alt="Choose local file" width="1000" /> 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy07.JPG?raw=true" alt="Choose local file" width="1000" /> 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy08.JPG?raw=true" alt="Choose local file" width="1000" /> 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy09.JPG?raw=true" alt="Choose local file" width="1000" /> 
+
+The link needed for the next step is:
+```
+http://cbwXX.dyndns.info/IntegrativeAssignment/refs/Homo_sapiens.GRCh38.86.chr9.gtf
+```
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/DataUp01.JPG?raw=true" alt="Upload file" width="1000" /> 
+The next link needed is:
+```
+http://cbwXX.dyndns.info/IntegrativeAssignment/refs/Homo_sapiens.GRCh38.dna.chromosome.9.fa
+```
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/DataUp03.JPG?raw=true" alt="Choose local file" width="1000" /> 
+Finally, the following links are needed for the next step:
+```
+http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/carcinoma_C02_read1.fasta
+http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/carcinoma_C02_read2.fasta
+http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/carcinoma_C03_read1.fasta
+http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/carcinoma_C03_read2.fasta
+http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/carcinoma_C06_read1.fasta
+http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/carcinoma_C06_read2.fasta
+http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/normal_N02_read1.fasta
+http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/normal_N02_read2.fasta
+http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/normal_N03_read1.fasta
+http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/normal_N03_read2.fasta
+http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/normal_N06_read1.fasta
+http://cbwXX.dyndns.info/IntegrativeAssignment/fasta/normal_N06_read2.fasta
+```
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/DataUp04.JPG?raw=true" alt="Choose local file" width="1000" /> 
+
+Optionally, we can change the name of the files shown as follows for easier use:
+
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/DataUp05.JPG?raw=true" alt="Choose local file" width="1000" /> 
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/DataUp06.JPG?raw=true" alt="Choose local file" width="1000" /> 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy10.JPG?raw=true" alt="Choose local file" width="250" /> 
 
 At the end of this section, we should see 14 files in our history.
