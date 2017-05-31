@@ -35,7 +35,7 @@ setwd("~/workspace/Module5/") # changes the currect directory to our Module 5 fo
 In order to run appropriate analysis, we first need to import our data.
 
 ```{r import_m}
-HCC_m <- read.delim(file="~/workspace/Module5/HCC1395.m.txt", sep="\t", header=TRUE, stringsAsFactors = FALSE)
+HCC_m <- read.delim(file="~/workspace/Module5/snv_analysis/HCC1395.m.txt", sep="\t", header=TRUE, stringsAsFactors = FALSE)
 
 # Add a column indicating the name of the sample that bears each mutation - required by deconstructSigs
 # Calculate the Variant Allele Frequency  by taking the ratio of the alternate allele count by the total count
