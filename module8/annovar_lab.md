@@ -11,7 +11,7 @@ home: https://bioinformaticsdotca.github.io/bicg_2017
 # Lab Module 8 - Annovar
 
 
-This tutorial will take you through using Annovar.
+This tutorial will take you through using [Annovar](http://www.openbioinformatics.org/annovar/annovar_download_form.php).  Instructions to install Annovar on your own computer can be found [here](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module8/Reimand_CBW_may2017_lab8A_Annovar_installation_optional.txt).
 
 ## Login
 
