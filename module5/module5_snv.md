@@ -29,9 +29,10 @@ cd Module5
 
 Now to ease the use of commands that will follow, we're going to set some environment variables. These variables will stand in for the directories where our softwares of interest are location.
 
->**Environment variables are only temporary. This means that once you log out of the server, these variables will be erased and must be reset if you'd like to use them again.**
+**Environment variables are only temporary. This means that once you log out of the server, these variables will be erased and must be reset if you'd like to use them again.**
 
 Now we'll set out environment variables for MuTect and SnpEff (which will be used for processing the outputs from the callers):
+
 ```
 MUTECT_DIR=/usr/local/mutect
 SNPEFF_DIR=/usr/local/snpEff
@@ -41,22 +42,27 @@ ANNOVAR_DIR=/usr/local/annovar
 ## Linking the Sequencing and Referencing Data
 
 For this lab module, we'll be using exome data on the HCC1395 breast cancer cell line. The tumour and normal bams have already been processed and placed on the server. So we'll create a soft link to the directory that it's stored. We'll also create a soft link to where the reference genome is stored, as well as a folder we'll use later on in the lab:
+
 ```
 ln -s /home/ubuntu/CourseData/CG_data/Module5/HCC1395
 ln -s /home/ubuntu/CourseData/CG_data/Module5/ref_data
 ln -s /home/ubuntu/CourseData/CG_data/Module5/snv_analysis
 ```
+
 For this lab we're going to limit our analysis to just the 7MB and 8MB region of chromosome 17 to ensure processing occurs quickly. The files we'll be focusing on can be viewed using the following command:
+
 ```
 ls HCC1395/HCC1395_exome*.17*
 ```
-You should see the files:
-* HCC1395_exome_normal.17.7MB-8MB.bam
-* HCC1395_exome_normal.17.7MB-8MB.bam.bai
-* HCC1395_exome_tumour.17.7MB-8MB.bam
-* HCC1395_exome_tumour.17.7MB-8MB.bam.bai
+
+You should see the files:  
+* HCC1395_exome_normal.17.7MB-8MB.bam  
+* HCC1395_exome_normal.17.7MB-8MB.bam.bai  
+* HCC1395_exome_tumour.17.7MB-8MB.bam  
+* HCC1395_exome_tumour.17.7MB-8MB.bam.bai  
 
 We can take a look at the contents of our bam files by using samtools. The header contains information about the reference genome, commands used to generate the file, and on read groups (information about sample/flow cell/lane etc.), as well as the main contents of the file contain the one aligned read (read name, chromosome, position etc.) per line:
+
 ```
 samtools view -h HCC1395/HCC1395_exome_normal.17.7MB-8MB.bam | less -s
 ```
@@ -68,15 +74,19 @@ samtools view -h HCC1395/HCC1395_exome_normal.17.7MB-8MB.bam | less -s
 In order to run MuTect, we simply run the java application of the program in one go. For our MuTect run, we're going to use two files to help filter out noise and focus on damaging mutations: common SNV's present in the general population as provided by dbSNP, and potentially damaging SNV's as documented in COSMIC. These files are stored in the same path as our MUTECT_DIR variable.
 
 Looking at the dbsnp file:
+
 ```
 less $MUTECT_DIR/dbsnp_132_b37.leftAligned.vcf
 ```
+
 And now the cosmic file:
+
 ```
 less $MUTECT_DIR/b37_cosmic_v54_120711.vcf
 ```
 
 In order to run MuTect, we'll be running the following command:
+
 ```
 mkdir results; mkdir results/mutect;
 /usr/local/java6/bin/java -Xmx4g -jar $MUTECT_DIR/muTect-1.1.4.jar \
@@ -103,6 +113,7 @@ grep -v "REJECT" results/mutect/HCC1395.17.7MB-8MB_stats.out > results/mutect/mu
 ```
 
 To take a look into the end of files, we can use the command _tail_:
+
 ```
 tail results/mutect/mutect_passed.vcf
 ```
@@ -125,9 +136,9 @@ vim config/strelka_config_bwa.ini
 
 In order to quit the editor while saving changes, press **ESC**, following by **:x!** and pressing enter. The reason why we do this is described on the [Strelka FAQ page](https://sites.google.com/site/strelkasomaticvariantcaller/home/faq):
 
-> The depth filter is designed to filter out all variants which are called above a multiple of the mean chromosome depth, the default configuration is set to filter variants with a depth greater than 3x the chromosomal mean. If you are using exome/targeted sequencing data, the depth filter should be turned off...
-> 
-> However in whole exome sequencing data, the mean chromosomal depth will be extremely small, resulting in nearly all variants being (improperly) filtered out.
+*The depth filter is designed to filter out all variants which are called above a multiple of the mean chromosome depth, the default configuration is set to filter variants with a depth greater than 3x the chromosomal mean. If you are using exome/targeted sequencing data, the depth filter should be turned off...*  
+ 
+*However in whole exome sequencing data, the mean chromosomal depth will be extremely small, resulting in nearly all variants being (improperly) filtered out.*  
 
 If you were doing this for whole genome sequencing data, then you should leave this parameter set to 0 as the depth of coverage won't be as high. 
 
@@ -152,7 +163,7 @@ make -C results/strelka/ -j 2
 
 The `-j 2` parameter specifies that we want to use 2 cores to run Strelka. Change this number to increase or decrease the parallelization of the job. The more cores the faster the job will be, but the higher the load on the machine that is running Strelka. 
 
-> If you have access to a grid engine cluster, you can replace the command `make` with `qmake` to launch Strelka on the cluster.
+*If you have access to a grid engine cluster, you can replace the command `make` with `qmake` to launch Strelka on the cluster.*  
 
 Strelka has the benefit of calling SNVs and small indels.  Additionally, Strelka calculates variant quality and filters the data in two tiers.  The filenames starting with `passed` contain high quality candidates, and filenames starting with `all` contain high quality and marginal quality candidates.
 
@@ -178,6 +189,7 @@ To run Annovar on the MuTect output, we use the following command:
 ```
 table_annovar.pl results/mutect/mutect_passed.vcf $ANNOVAR_DIR/humandb/ -buildver hg19 -out results/annotated/mutect -remove -protocol refGene,cytoBand,genomicSuperDups,1000g2015aug_all,avsnp147,dbnsfp30a -operation g,r,r,f,f,f -nastring . --vcfinput
 ```
+
 We can view the resulting file by going _less_ on it:
 
 ```
@@ -234,27 +246,27 @@ head results/strelka_snvs_tabbed.txt
 
 A common step after prediction of SNVs is to visualize these mutations in IGV. Let's load these bam into IGV. Open IGV, then:
 
-1. Change the genome to hg19 (if it isn't already)
-2. File -> Load from URL ...
-    * http://cbwxx.dyndns.info/Module5/HCC1395/HCC1395_exome_tumour.17.7MB-8MB.bam
-    * http://cbwxx.dyndns.info/Module5/HCC1395/HCC1395_exome_normal.17.7MB-8MB.bam
+1. Change the genome to hg19 (if it isn't already)  
+2. File -> Load from URL ...  
+    * http://cbwxx.dyndns.info/Module5/HCC1395/HCC1395_exome_tumour.17.7MB-8MB.bam  
+    * http://cbwxx.dyndns.info/Module5/HCC1395/HCC1395_exome_normal.17.7MB-8MB.bam  
 
 Where the xx is your student number. Once the tumour and normal bam have been loaded into IGV, we can investigate a few predicted positions in IGV:
 
-* 17:7491818
-* 17:7578406
-* 17:7593160
-* 17:7011723
-* 17:7482929
+* 17:7491818  
+* 17:7578406  
+* 17:7593160  
+* 17:7011723  
+* 17:7482929  
 
 Manually inspecting these predicted SNVs in IGV is a good way to verify the predictions and also identify potential false positives:
 
-> When possible, you should always inspect SNVs
+*When possible, you should always inspect SNVs*
 
 ### Exploration in R
 
 While IGV is good for visualizing individual mutations, looking at more global characteristics would require loading the data into an analysis language like R.
 
-We will use exome-wide SNV predictions for MuTect for these analyses; specifically, we're only going to look at the _stats.out_ output from MuTect that has been run on the whole exome file. The processed tabular text files along with the `snv_analysis.Rmd` RMarkdown file that contains the R code is available in our `snv_analysis` folder. Alternatively, open a new RMarkdown file and paste the contents of the file [here](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module5/snv_analysis.txt).
+We will use exome-wide SNV predictions for MuTect for these analyses; specifically, we're only going to look at the _stats.out_ output from MuTect that has been run on the whole exome file. The processed tabular text files along with the `snv_analysis.Rmd` RMarkdown file that contains the R code is available in our `snv_analysis` folder. Alternatively, open a new RMarkdown file and paste the contents of the file [here](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module5/snv_analysis.txt).  
 
 Now let's launch our RStudio instance and continue our analysis there.
