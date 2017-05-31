@@ -75,7 +75,7 @@ samtools flagstat HCC1395/HCC1395_exome_normal.17.7MB-8MB.bam
 
 ## MuTect
 
-In order to run MuTect, we simply run the java application of the program in one go. For our run of MuTect run, we're going to use two files to help filter out noise and focus on damaging mutations.: common SNV's present from in the general population as provided by dbSNP, and potentially damaging SNV's as documented in COSMIC. These files are stored in the same path as our MUTECT_DIR variable.
+In order to run MuTect, we simply run the java application of the program in one go. For our MuTect run, we're going to use two files to help filter out noise and focus on damaging mutations: common SNV's present in the general population as provided by dbSNP, and potentially damaging SNV's as documented in COSMIC. These files are stored in the same path as our MUTECT_DIR variable.
 
 Looking at the dbsnp file:
 ```
@@ -108,8 +108,8 @@ less -s results/mutect/HCC1395.17.7MB-8MB_summary.vcf
 Now to subset for just the SNV's that have passed quality filtering, we use the following commands:
 
 ```
-grep -v "REJECT" results/mutect/HCC1395.17.7MB-8MB_summary.vcf > results/mutect/HCC1395.17.7MB-8MB_passed.vcf
-grep -v "REJECT" results/mutect/HCC1395.17.7MB-8MB_stats.out > results/mutect/HCC1395.17.7MB-8MB_passed.stats.out
+grep -v "REJECT" results/mutect/HCC1395.17.7MB-8MB_summary.vcf > results/mutect/mutect_passed.vcf
+grep -v "REJECT" results/mutect/HCC1395.17.7MB-8MB_stats.out > results/mutect/mutect_passed.stats.out
 ```
 
 
@@ -181,7 +181,7 @@ mkdir results/annotated
 To run Annovar on the MuTect output, we use the following command:
 
 ```
-table_annovar.pl results/mutect/HCC1395.17.7MB-8MB_passed.vcf $ANNOVAR_DIR/humandb/ -buildver hg19 -out results/annotated/mutect -remove -protocol refGene,cytoBand,genomicSuperDups,esp6500siv2_all,1000g2015aug_all,1000g2015aug_eur,exac03,avsnp147,dbnsfp30a -operation g,r,r,f,f,f,f,f,f -nastring . --vcfinput
+table_annovar.pl results/mutect/mutect_passed.vcf $ANNOVAR_DIR/humandb/ -buildver hg19 -out results/annotated/mutect -remove -protocol refGene,cytoBand,genomicSuperDups,esp6500siv2_all,1000g2015aug_all,1000g2015aug_eur,exac03,avsnp147,dbnsfp30a -operation g,r,r,f,f,f,f,f,f -nastring . --vcfinput
 ```
 
 Unfortunately our strelka vcf doesn't have the mandatory info field for genotype _GT_ in the format that annovar requires, and so some manipulation of our strelka results are needed. Annovar requires a minimum of the chromosome, start position, end position, reference allele, and alternate allele.
@@ -195,27 +195,36 @@ grep -v "##" results/strelka/results/passed.somatic.snvs.vcf | awk '{print $1"\t
 Now we can annotate the Strelka output as we did before:
 
 ```
-table_annovar.pl results/mutect/HCC1395.17.7MB-8MB_passed.vcf $ANNOVAR_DIR/humandb/ -buildver hg19 -out esults/annotated/strelka -remove -protocol refGene,cytoBand,genomicSuperDups,esp6500siv2_all,1000g2015aug_all,1000g2015aug_eur,exac03,avsnp147,dbnsfp30a -operation g,r,r,f,f,f,f,f,f -nastring . --vcfinput
+table_annovar.pl results/mutect/HCC1395.17.7MB-8MB_passed.vcf $ANNOVAR_DIR/humandb/ -buildver hg19 -out esults/annotated/strelka -remove -protocol refGene,cytoBand,genomicSuperDups,esp6500siv2_all,1000g2015aug_all,1000g2015aug_eur,exac03,avsnp147,dbnsfp30a -operation g,r,r,f,f,f,f,f,f -nastring . -csvout
 ```
 
+The output from our Strelka output is stored in comma separated format, which can be downloaded and viewed locally in excel.
 
-## Parsing specific fields from our vcf file
+
+## Parsing specific fields from our vcf files
 
 The VCF format is sometimes not useful for visualization and data exploration purposes which often requires the data to be in tabular format. We can convert from VCF format to tabular format using the extractField() function from SnpSift/SnpEff. Since each mutation caller has a different set of output values in the VCF file, the command needs be adjusted for each mutation caller depending on the fields present in the header. 
 
-For example, to convert the Strelka VCF file into a tabular format:
+For example, to convert the MuTect VCF file into a tabular format containing only the chromosome, position, reference allele, alternate allele, function of gene, gene name, cytoband, exonic function, allele frequency of normal, and allele frequency of control:
 
 ```
-java -jar $SNPEFF_DIR/SnpSift.jar extractFields -e "."  results/strelka/results/passed.somatic.snvs.vcf CHROM POS REF ALT GEN[0].DP GEN[1].DP GEN[0].AU GEN[1].AU GEN[0].CU GENq[1].CU GEN[0].GU GEN[1].GU GEN[0].TU GEN[1].TU > results/strelka/results/passed.somatic.snvs.txt 
+java -jar $SNPEFF_DIR/SnpSift.jar extractFields -e "." results/mutect/mutect_passed.vcf CHROM POS REF ALT Func.refGene Gene.refGene cytoBand ExonicFunc.refGene GEN[0].FA GEN[1].FA > results/mutect_passed_tabbed.txt
 ```
 
-To convert the MuTect VCF file into a tabular format:
+To convert the Strelka VCF file into a tabular format into a similar format containing the chromosome, position, reference allele, alternate allele, depth of normal, depth of tumour, # of A's, C's, G's, and T's in normal and tumour:
 
 ```
-java -jar $SNPEFF_DIR/SnpSift.jar extractFields -e "." results/mutect/HCC1395.17.7MB-8MB_passed.vcf CHROM POS REF ALT Func.refGene Gene.refGene cytoBand ExonicFunc.refGene GEN[0].FA GEN[1].FA > results/annotated/HCC1395.7MB-8MB_passed.txt
+java -jar $SNPEFF_DIR/SnpSift.jar extractFields -e "."  results/strelka/results/passed.somatic.snvs.vcf CHROM POS REF ALT GEN[0].DP GEN[1].DP GEN[0].AU GEN[1].AU GEN[0].CU GEN[1].CU GEN[0].GU GEN[1].GU GEN[0].TU GEN[1].TU > results/strelka_snvs_tabbed.txt 
 ```
 
 The -e parameter specifies how to represent empty fields. In this case, the "." character is placed for any empty fields. This facilitates loading and completeness of data. For more details on the extractField() function see the [SnpSift documentation](http://snpeff.sourceforge.net/SnpSift.html#Extract).
+
+We can view the first 10 lines of our tabbed file by running the following commands (one at a time):
+
+```
+head results/mutect_passed_tabbed.txt
+head results/strelka_snvs_tabbed.txt
+```
 
 ## Data Exploration
 
@@ -225,15 +234,16 @@ A common step after prediction of SNVs is to visualize these mutations in IGV. L
 
 1. Change the genome to hg19 (if it isn't already)
 2. File -> Load from URL ...
-    * http://cbwxx.dyndns.info//Module5/HCC1395/HCC1395_exome_tumour.17.7MB-8MB.bam
-    * http://cbwxx.dyndns.info//Module5/HCC1395/HCC1395_exome_normal.17.7MB-8MB.bam
+    * http://cbwxx.dyndns.info/Module5/HCC1395/HCC1395_exome_tumour.17.7MB-8MB.bam
+    * http://cbwxx.dyndns.info/Module5/HCC1395/HCC1395_exome_normal.17.7MB-8MB.bam
 
 Where the xx is your student number. Once the tumour and normal bam have been loaded into IGV, we can investigate a few predicted positions in IGV:
 
 * 17:7491818
 * 17:7578406
+* 17:7593160
+* 17:7011723
 * 17:7482929
-* 17:7710987
 
 Manually inspecting these predicted SNVs in IGV is a good way to verify the predictions and also identify potential false positives:
 
@@ -243,6 +253,6 @@ Manually inspecting these predicted SNVs in IGV is a good way to verify the pred
 
 While IGV is good for visualizing individual mutations, looking at more global characteristics would require loading the data into an analysis language like R.
 
-We will use exome-wide SNV predictions for MuTect for these analyses; specifically, we're only going to look at the _stats.out_ output from MuTect that has been run on the whole exome file. The processed tabular text files along with the `snv_analysis.Rmd` RMarkdown file that contains the R code is available in our `snv_analysis` folder  
+We will use exome-wide SNV predictions for MuTect for these analyses; specifically, we're only going to look at the _stats.out_ output from MuTect that has been run on the whole exome file. The processed tabular text files along with the `snv_analysis.Rmd` RMarkdown file that contains the R code is available in our `snv_analysis` folder. Alternatively, open a new RMarkdown file and paste the contents of the file [here](https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module5/snv_analysis.Rmd).
 
-Now let's launch our RStudio instance and open the file in `workspace/Module5/snv_analysis/snv_analysis.Rmd`
+Now let's launch our RStudio instance and continue our analysis there.
