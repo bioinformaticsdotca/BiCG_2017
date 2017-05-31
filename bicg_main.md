@@ -106,7 +106,7 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 [Lecture](https://bioinformatics.ca/bicg_2017_mod5_lab)
 
-[Lab Practical]()  
+[Lab Practical](https://bioinformatics.ca/bicg_2017_lab_5)  
 
 ## Module 6: Gene Expression  
 
