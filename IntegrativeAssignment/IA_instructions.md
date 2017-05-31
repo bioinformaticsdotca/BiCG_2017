@@ -52,6 +52,17 @@ Once these files have been downloaded, we can begin to upload them onto the Gala
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy01.JPG?raw=true" alt="Setup 3" width="1000" />
 
+## Registering for Galaxy
+
+Follow the following steps below to register for Galaxy:
+
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Register00.JPG?raw=true" alt="Get data" width="1000" /> 
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Register01.JPG?raw=true" alt="Upload file" width="1000" /> 
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Register02.JPG?raw=true" alt="Choose local file" width="1000" /> 
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Register03.JPG?raw=true" alt="Choose local file" width="250" /> 
+
+## Uploading data
+
 Press on the *Get Data* button on the left hand side, followed by the *Upload File* button. Press on *Choose local file*, and select the fasta files, gtf, and modified reference that were recently downloaded. Alternatively, you can drag and drop the files from your computer onto the window. Leave all options on default, except __make sure to change the type of file in for our gtf file to a gtf__. Although the order of upload won't make much of a difference, follow the images below and upload the gtf and reference fasta first, and once completed, upload our tumour and normal fasta files.
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy02.JPG?raw=true" alt="Get data" width="1000" /> 
