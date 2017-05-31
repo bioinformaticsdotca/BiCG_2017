@@ -96,7 +96,7 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 ***
 
-# Day 3 <a id="day1"></a>  
+# Day 3 <a id="day3"></a>  
 
 ## Module 5: Somatic Mutations and Annotations
 
@@ -104,9 +104,9 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 [Lecture](https://bioinformatics.ca/bicg-2017-mod5)  
 
-[Lecture](https://bioinformatics.ca/bicg_2017_mod5_lab)
+[Lab Lecture](https://bioinformatics.ca/bicg-2017-mod5lab)
 
-[Lab Practical](https://bioinformatics.ca/bicg_2017_lab_5)  
+[Lab Practical](https://bioinformaticsdotca.github.io/bicg_2017_lab_5)  
 
 ## Module 6: Gene Expression  
 
@@ -122,7 +122,7 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 ***
 
-# Day 4 <a id="day2"></a>
+# Day 4 <a id="day4"></a>
 
 ## Module 7: Gene Fusion and Rearrangements
 
@@ -156,7 +156,7 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 ***
 
-# Day 5 <a id="day1"></a>  
+# Day 5 <a id="day5"></a>  
 
 ## Module 8: Variants to Networks
 
