@@ -34,7 +34,7 @@ ln -s /home/ubuntu/CourseData/CG_data/IntegrativeAssignment/
 Now to be make the reference accessible, we need to change the permissions of the reference files by running the following command:
 
 ```
-chmod -r ugo+wr IntegrativeAssignemnt/refs
+chmod ugo+wr IntegrativeAssignemnt/refs
 chmod ugo+wr IntegrativeAssignemnt/refs/*
 ```
 
