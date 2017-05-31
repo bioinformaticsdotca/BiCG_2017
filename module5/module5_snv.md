@@ -253,6 +253,6 @@ Manually inspecting these predicted SNVs in IGV is a good way to verify the pred
 
 While IGV is good for visualizing individual mutations, looking at more global characteristics would require loading the data into an analysis language like R.
 
-We will use exome-wide SNV predictions for MuTect for these analyses; specifically, we're only going to look at the _stats.out_ output from MuTect that has been run on the whole exome file. The processed tabular text files along with the `snv_analysis.Rmd` RMarkdown file that contains the R code is available in our `snv_analysis` folder. Alternatively, open a new RMarkdown file and paste the contents of the file [here](https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module5/snv_analysis.Rmd).
+We will use exome-wide SNV predictions for MuTect for these analyses; specifically, we're only going to look at the _stats.out_ output from MuTect that has been run on the whole exome file. The processed tabular text files along with the `snv_analysis.Rmd` RMarkdown file that contains the R code is available in our `snv_analysis` folder. Alternatively, open a new RMarkdown file and paste the contents of the file [here](https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module5/snv_analysis.txt).
 
 Now let's launch our RStudio instance and continue our analysis there.
