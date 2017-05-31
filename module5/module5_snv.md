@@ -112,6 +112,11 @@ grep -v "REJECT" results/mutect/HCC1395.17.7MB-8MB_summary.vcf > results/mutect/
 grep -v "REJECT" results/mutect/HCC1395.17.7MB-8MB_stats.out > results/mutect/mutect_passed.stats.out
 ```
 
+To take a look into the end of files, we can use the command _tail_:
+```
+tail results/mutect/mutect_passed.vcf
+```
+
 
 ## Strelka
 
@@ -164,24 +169,29 @@ Strelka has the benefit of calling SNVs and small indels.  Additionally, Strelka
 The Strelka results are in VCF format, with additional fields explained on the [strelka website](https://sites.google.com/site/strelkasomaticvariantcaller/home/somatic-variant-output).
 
 ```
-less -S results/strelka/results/passed.somatic.snvs.vcf
-less -S results/strelka/results/passed.somatic.indels.vcf
+less -s results/strelka/results/passed.somatic.snvs.vcf
+less -s results/strelka/results/passed.somatic.indels.vcf
 ```
 
 ## Annotating our mutations
 
-Now that we have our list of mutations, we can annotate them with multiple layers of information, such as the gene name, the function of the location (intronic, exonic), whether the mutation belongs to dbSNP or the 1000 genome project, and multiple other layers. For this lab, we're going to annotate our variants with the following fields of information: Function, Gene Name, Cytoband, Exonic function of the SNV, 1000 genome membership, dbsnp membership.
+Now that we have our list of mutations, we can annotate them with multiple layers of information, such as the gene name, the function of the location (intronic, exonic), whether the mutation belongs to dbSNP or the 1000 genome project, and multiple other layers.
 
 Let's place these results in a new folder within our results folder:
 
 ```
-mkdir results/annotated
+mkdir results/annotated/
 ```
 
 To run Annovar on the MuTect output, we use the following command:
 
 ```
-table_annovar.pl results/mutect/mutect_passed.vcf $ANNOVAR_DIR/humandb/ -buildver hg19 -out results/annotated/mutect -remove -protocol refGene,cytoBand,genomicSuperDups,esp6500siv2_all,1000g2015aug_all,1000g2015aug_eur,exac03,avsnp147,dbnsfp30a -operation g,r,r,f,f,f,f,f,f -nastring . --vcfinput
+table_annovar.pl results/mutect/mutect_passed.vcf $ANNOVAR_DIR/humandb/ -buildver hg19 -out results/annotated/mutect -remove -protocol refGene,cytoBand,genomicSuperDups,1000g2015aug_all,avsnp147,dbnsfp30a -operation g,r,r,f,f,f -nastring . --vcfinput
+```
+We can view the resulting file by going _less_ on it:
+
+```
+less results/annotated/mutect.hg19_multianno.vcf
 ```
 
 Unfortunately our strelka vcf doesn't have the mandatory info field for genotype _GT_ in the format that annovar requires, and so some manipulation of our strelka results are needed. Annovar requires a minimum of the chromosome, start position, end position, reference allele, and alternate allele.
@@ -195,10 +205,10 @@ grep -v "##" results/strelka/results/passed.somatic.snvs.vcf | awk '{print $1"\t
 Now we can annotate the Strelka output as we did before:
 
 ```
-table_annovar.pl results/mutect/HCC1395.17.7MB-8MB_passed.vcf $ANNOVAR_DIR/humandb/ -buildver hg19 -out esults/annotated/strelka -remove -protocol refGene,cytoBand,genomicSuperDups,esp6500siv2_all,1000g2015aug_all,1000g2015aug_eur,exac03,avsnp147,dbnsfp30a -operation g,r,r,f,f,f,f,f,f -nastring . -csvout
+table_annovar.pl results/strelka/results/passed.somatic.snvs.txt $ANNOVAR_DIR/humandb/ -buildver hg19 -out results/annotated/strelka -remove -protocol refGene,cytoBand,genomicSuperDups,1000g2015aug_all,avsnp147,dbnsfp30a -operation g,r,r,f,f,f -nastring . -csvout
 ```
 
-The output from our Strelka output is stored in comma separated format, which can be downloaded and viewed locally in excel.
+The output from this is stored in comma separated format as _strelka.hg19_multianno.csv_ under the folder Module5/results/annotated/, which can be downloaded and viewed locally in excel.
 
 
 ## Parsing specific fields from our vcf files
@@ -208,8 +218,10 @@ The VCF format is sometimes not useful for visualization and data exploration pu
 For example, to convert the MuTect VCF file into a tabular format containing only the chromosome, position, reference allele, alternate allele, function of gene, gene name, cytoband, exonic function, allele frequency of normal, and allele frequency of control:
 
 ```
-java -jar $SNPEFF_DIR/SnpSift.jar extractFields -e "." results/mutect/mutect_passed.vcf CHROM POS REF ALT Func.refGene Gene.refGene cytoBand ExonicFunc.refGene GEN[0].FA GEN[1].FA > results/mutect_passed_tabbed.txt
+java -jar $SNPEFF_DIR/SnpSift.jar extractFields -e "." results/annotated/mutect.hg19_multianno.vcf CHROM POS REF ALT Func.refGene Gene.refGene cytoBand ExonicFunc.refGene avsnp147 GEN[0].FA GEN[1].FA > results/mutect_passed_tabbed.txt
 ```
+
+We can view the new tab delimited file:
 
 To convert the Strelka VCF file into a tabular format into a similar format containing the chromosome, position, reference allele, alternate allele, depth of normal, depth of tumour, # of A's, C's, G's, and T's in normal and tumour:
 
