@@ -180,7 +180,7 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 [Lecture](https://bioinformatics.ca/bicg-2017-mod9)
 
-[Lab Practical]()
+[Lab Practical](https://bioinformatics.ca/bicg-2017-mod9lab)
 
 ***
 
