@@ -118,7 +118,7 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 ## Integrated Assignment
 
-[Integrated Assignment](https://bioinformatics.ca/bicg_2017_ia)  
+[Integrated Assignment](https://bioinformaticsdotca.github.io/bicg_2017_ia)  
 
 ***
 
