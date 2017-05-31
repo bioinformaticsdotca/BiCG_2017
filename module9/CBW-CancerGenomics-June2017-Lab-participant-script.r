@@ -1,5 +1,5 @@
 
-install.packages(pkgs = c('SNFtool','RColorBrewer','reshape2','ggplot2',"survival",'rms'))
+install.packages(pkgs = c('SNFtool','RColorBrewer','reshape2','ggplot2',"survival",'rms',"repmis"))
 
 # Load libraries
 library('SNFtool')
@@ -7,7 +7,8 @@ library('RColorBrewer')
 library('reshape2')
 library('ggplot2')
 library("survival")
-library('rms')
+library('rms')  
+library('repmis')
 
 # My working directories (one for my laptop and one for my lab computer), enter your own here!
 # setwd("C:/Users/Owner/Desktop/Goldenberg Lab/CBW/Genomic Medicine Workshop/")
