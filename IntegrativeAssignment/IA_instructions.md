@@ -22,18 +22,19 @@ To accomplish this goal, we're going to be using the softwares [Hisat](https://c
 
 >Note: The tools used for RNA-Sequencing pipelines do vary, so the above tools can be swapped out with others provided that the outputs from one program are compatible with another.
 
-## Uploading our data
+## Some configuration for our data
 
-Let's begin by downloading and subsequently uploading our data onto the Galaxy server. Login into the AWS instance through either terminal or PuTTy, and make a link to where the data is stored:
+To be able to upload our data onto the Galaxy server, we need to make a few modifications. Login into the AWS instance through either terminal or PuTTy, and make a soft link to where the data is stored:
 
 ```
 cd workspace
 ln -s /home/ubuntu/CourseData/CG_data/IntegrativeAssignment/
 ```
 
-Now to be able to download, we need to change the permissions of the reference file by running the following command:
+Now to be make the reference accessible, we need to change the permissions of the reference files by running the following command:
 
 ```
+chmod -r ugo+wr IntegrativeAssignemnt/refs
 chmod ugo+wr IntegrativeAssignemnt/refs/*
 ```
 
