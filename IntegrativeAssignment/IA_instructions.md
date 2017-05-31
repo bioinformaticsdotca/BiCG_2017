@@ -181,8 +181,7 @@ Finally, we're going to extract our workflow to be able to save and rerun it at 
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy39_exporting_workflow.jpg?raw=true" alt="Extract workflow from history" width="750" />
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy40_exporting_workflow.jpg?raw=true" alt="Accept all selected programs" width="750" />
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy41_exporting_workflow.jpg?raw=true" alt="Click on workflow after exporting it" width="750" />
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy42_exporting_workflow.jpg?raw=true" alt="Path to viewing our workflow" width="750" />
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy43_exporting_workflow.jpg?raw=true" alt="Looking at workflow" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy43_exporting_workflow.jpg?raw=true" alt="Path to viewing our workflow" width="750" />
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Galaxy44_exporting_workflow.jpg?raw=true" alt="Looking at workflow" width="750" />
 
 This concludes the Galaxy tutorial. But this is still only an introduction - there's plenty of other analysis you can perform using the Galaxy server so it is encouraged to test different workflows!
