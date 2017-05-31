@@ -56,19 +56,9 @@ You should see the files:
 * HCC1395_exome_tumour.17.7MB-8MB.bam
 * HCC1395_exome_tumour.17.7MB-8MB.bam.bai
 
-Let's take a bit of time to look into the bam files we have, starting with the header. The header contains information about the reference genome, commands used to generate the file, and on read groups (information about sample/flow cell/lane etc.)
+We can take a look at the contents of our bam files by using samtools. The header contains information about the reference genome, commands used to generate the file, and on read groups (information about sample/flow cell/lane etc.), as well as the main contents of the file contain the one aligned read (read name, chromosome, position etc.) per line:
 ```
-samtools view -H HCC1395/HCC1395_exome_normal.17.7MB-8MB.bam | less -s
-```
-
-The main contents of the file contain the one aligned read (read name, chromosome, position etc.) per line:
-```
-samtools view HCC1395/HCC1395_exome_normal.17.7MB-8MB.bam | less -s
-```
-
-In order to determine statistics about the bam file, we can use samtools' built in tool:
-```
-samtools flagstat HCC1395/HCC1395_exome_normal.17.7MB-8MB.bam
+samtools view -h HCC1395/HCC1395_exome_normal.17.7MB-8MB.bam | less -s
 ```
 
 # Predicting SNVs
