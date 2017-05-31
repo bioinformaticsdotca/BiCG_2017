@@ -184,7 +184,8 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 [Lab Script](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module9/CBW-CancerGenomics-June2017-Lab-participant-script.r)  
 
-[Data for lab](https://drive.google.com/open?id=0B9YRtlFnFl-QVnpRV1U0Ykt3U2s)  
+[Data for lab part 1](https://github.com/bioinformaticsdotca/BiCG_2017/raw/master/module9/CBW-CancerGenomics-June2017-Lab-Data-Half1.RData)   
+[Data for lab part 2](https://github.com/bioinformaticsdotca/BiCG_2017/raw/master/module9/CBW-CancerGenomics-June2017-Lab-Data-Half2.RData)   
 
 ***
 
