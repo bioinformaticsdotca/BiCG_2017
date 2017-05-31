@@ -138,7 +138,7 @@ configureStrelkaWorkflow.pl \
     --tumor HCC1395/HCC1395_exome_tumour.17.7MB-8MB.bam \
     --normal HCC1395/HCC1395_exome_normal.17.7MB-8MB.bam \
     --ref ref_data/Homo_sapiens.GRCh37.75.dna.primary_assembly.reordered.fa \
-    --config config/strelka_config_bwa.ini
+    --config config/strelka_config_bwa.ini \
     --output-dir results/strelka/
 ```
 
