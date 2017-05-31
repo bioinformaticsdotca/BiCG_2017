@@ -10,7 +10,13 @@ home: https://bioinformaticsdotca.github.io//bicg_2017
 
 # Galaxy
 
-The purpose of this integrative assignment is to help you familiarize yourself with the Galaxy environment by performing a differential expression experiment between a set of carnioma samples and normal samples.
+The purpose of this integrative assignment is to help you familiarize yourself with the Galaxy environment by performing a differential expression experiment between a set of carnioma samples and normal samples. In order to run a differential expression analysis, we have three major steps:
+
+* Alignment of the sequence data onto our reference
+* Quantification of the transcripts based on our alignment
+* Normalization and differential expression based on the quantified transcripts
+
+More in depth information is provided on the [Galaxy website](https://galaxyproject.org/tutorials/rb_rnaseq/#read-mapping) as well as the notes in Module 6.
 
 To accomplish this goal, we're going to be using the softwares [Hisat](https://ccb.jhu.edu/software/hisat/index.shtml) for alignment of the reads, [Cufflinks](http://cole-trapnell-lab.github.io/cufflinks/) for efficient transcript quantification, [Cuffmerge](http://cole-trapnell-lab.github.io/cufflinks/cuffmerge/) to combine transcript counts, and finally [CuffDiff](http://cole-trapnell-lab.github.io/cufflinks/cuffdiff/index.html) to determine differenially expressed genes.
 
@@ -56,10 +62,10 @@ Once these files have been downloaded, we can begin to upload them onto the Gala
 
 Follow the following steps below to register for Galaxy:
 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Register00.JPG?raw=true" alt="Get data" width="1000" /> 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Register01.JPG?raw=true" alt="Upload file" width="1000" /> 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Register02.JPG?raw=true" alt="Choose local file" width="1000" /> 
-<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Register03.JPG?raw=true" alt="Choose local file" width="250" /> 
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Register00.jpg?raw=true" alt="Get data" width="1000" /> 
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Register01.jpg?raw=true" alt="Upload file" width="1000" /> 
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Register02.jpg?raw=true" alt="Choose local file" width="1000" /> 
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/IntegrativeAssignment/Images/Register03.jpg?raw=true" alt="Choose local file" width="250" /> 
 
 ## Uploading data
 
