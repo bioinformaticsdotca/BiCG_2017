@@ -180,7 +180,9 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 [Lecture](https://bioinformatics.ca/bicg-2017-mod9)
 
-[Lab Practical](https://bioinformatics.ca/bicg-2017-mod9lab)
+[Lab Practical](https://bioinformatics.ca/bicg-2017-mod9lab)  
+
+[Lab Script](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module9/CBW-CancerGenomics-June2017-Lab-participant-script.r)  
 
 ***
 
