@@ -1,6 +1,6 @@
 ---
 layout: tutorial_page
-permalink: /integrative_assignemnt
+permalink: /bicg_2017_ia
 title: BiCG
 header1: Bioinformatics for Cancer Genomics 2017
 header2: Integrative Assignment using Galaxy
@@ -65,12 +65,12 @@ Let's begin with our transcript alignment/assembly using Hisat. Navigate to the 
 <img src="" alt="Finding Hisat" width="500" /> 
 
 Now to run Hisat, we're going to make a few modifications. Change:
-*Input data format* to FASTA
-*Single end or paired end?* to Individual paired reads
-*Forward reads* to multiple datasets
-*Reverse reads* to multiple datasets
-*Source for the reference genome to align against* to Use a genome from history
-*Select the reference genome* to 14: Homo_sapiens.GRCh38.dna.chromosome.9.fa
+* *Input data format* to FASTA
+* *Single end or paired end?* to Individual paired reads
+* *Forward reads* to multiple datasets
+* *Reverse reads* to multiple datasets
+* *Source for the reference genome to align against* to Use a genome from history
+* *Select the reference genome* to 14: Homo_sapiens.GRCh38.dna.chromosome.9.fa
 
 Now in the forward reads, we're going to go ahead and select all our read1 reads. For the reverse reads, we're going to select the read2 reads. The screen should look as follows:
 
@@ -112,9 +112,9 @@ Let's go back to the home page and see whether the alignment has finished.
 Now we're going to run cufflinks to assemble our transcripts and quantify them.
 
 To do this, type _Cufflinks_ in the search bar and click on the program. Once opened, modify the options by changing:
-*SAM or BAM of aligned RNA-Seq reads* to multiple datasets
-*Use reference annotation* to use reference annotation
-*Reference annotation * to 1: Homo_sapiens.GRCh38.86.chr9.gtf
+* *SAM or BAM of aligned RNA-Seq reads* to multiple datasets
+* *Use reference annotation* to use reference annotation
+* *Reference annotation * to 1: Homo_sapiens.GRCh38.86.chr9.gtf
 
 Make sure to select all the outputs in the _SAM or BAM of aligned RNA-Seq reads_. Leave all other options on default, and press run.
 
@@ -123,9 +123,9 @@ Make sure to select all the outputs in the _SAM or BAM of aligned RNA-Seq reads_
 ## Merging transcript quantification from Cufflinks
 
 Next, we're going to combine our transcript abundances from Cufflinks using the Cuffmerge program. Like before, type _Cuffmerge_ in the search options to the left, select the program, and then modify it as follows:
-*GTF file(s) produced by Cufflinks* to multiple
-*Use reference annotation* to use reference annotation
-*Reference annotation * to 1: Homo_sapiens.GRCh38.86.chr9.gtf
+* *GTF file(s) produced by Cufflinks* to multiple
+* *Use reference annotation* to use reference annotation
+* *Reference annotation * to 1: Homo_sapiens.GRCh38.86.chr9.gtf
 
 Select only the assembled Transcripts in the _GTF file(s) produced by Cufflinks_. Leave all other options on default, and press run.
 
@@ -135,15 +135,36 @@ Select only the assembled Transcripts in the _GTF file(s) produced by Cufflinks_
 
 Finally we're going to perform the differential expression analysis between our two groups using the outputs from Hisat and cuffmerge. Find Cuffdiff in the search bar and select it, and make the following changes:
 
-*Transcripts* to Cuffmerge on data...
-*1: Condition Name* to Carcinoma
-*2: Condition Name* to Normal
-Select the Carcinoma 
+* *Transcripts* to Cuffmerge on data...
+* *1: Condition Name* to Carcinoma
+* Select the Carcinoma samples: datasets 14, 15, 16
+* *2: Condition Name* to Normal
+* Select the Normal samples: datasets 17, 18, 19
 
+Leave everything else on default, and execute the command.
 
+<img src="" alt="Running Cuffdiff" width="500" />
 
+Cuffdiff will generate differential expression results based on genes, transcripts, TSS, promoters, CDS, and splicing. We're going to look into the gene based differential expression, but feel free to peer into the other files.
 
+Click on the eye of the _Cuffdiff on data 20, data 19, and others: gene differential expression testing_ to view the contents of the file. As we can see from the file, it contains the gene id, gene name, locus, the annotation for the samples, whether a test for significant differential expression was/could be performed, the normalized gene counts, log2 fold change, significance, false positive value, and finally whether the gene is significantly differentially expressed.
 
+<img src="" alt="Viewing output Cuffdiff" width="500" />
 
+Alternatively, the file can be downloaded and opened in Excel for reordering by, for example, status in the significant column:
 
+<img src="" alt="Downloading output" width="500" />
+<img src="" alt="Opening output in excel" width="500" />
+<img src="" alt="Excel reordering 1" width="500" />
+<img src="" alt="Excel reordering 2" width="500" />
+
+Finally, we're going to extract our workflow to be able to save and rerun it at a later time. This also helps to visually see the steps that were taken and the connections between the programs. 
+
+<img src="" alt="Extract workflow from history" width="500" />
+<img src="" alt="Accept all selected programs" width="500" />
+<img src="" alt="Click on workflow after exporting it" width="500" />
+<img src="" alt="Path to viewing our workflow" width="500" />
+<img src="" alt="Looking at workflow" width="500" />
+
+This concludes the Galaxy tutorial. But this is still only an introduction - there's plenty of other analysis you can perform using the Galaxy server so it is encouraged to test different workflows!
 
