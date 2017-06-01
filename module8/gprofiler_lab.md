@@ -74,7 +74,7 @@ Scroll down to see significantly enriched pathways and processes. Scroll right t
 
 ## Building an Enrichment Map visualization in Cytoscape
 
-1.	From the main menu, select Apps>Enrichment Map>Create Enrichment Map. If you don’t have this app, install version 2.2.1 using Cytoscape App Manager or (Cytoscape App Store)[http://apps.cytoscape.org/apps/enrichmentmap].  
+1.	From the main menu, select Apps>Enrichment Map>Create Enrichment Map. If you don’t have this app, install version 2.2.1 using Cytoscape App Manager or [Cytoscape App Store](http://apps.cytoscape.org/apps/enrichmentmap).  
 2.	First load all the files:  
 * GMT file: has gene-set definitions  
 * Enrichment of data-set 1: has enrichment statistics for GBM  
