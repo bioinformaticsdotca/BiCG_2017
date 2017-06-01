@@ -76,9 +76,9 @@ Scroll down to see significantly enriched pathways and processes. Scroll right t
 
 1.	From the main menu, select Apps>Enrichment Map>Create Enrichment Map. If you don’t have this app, install version 2.2.1 using Cytoscape App Manager or [Cytoscape App Store](http://apps.cytoscape.org/apps/enrichmentmap).  
 2.	First load all the files:  
-* GMT file: has gene-set definitions  
-* Enrichment of data-set 1: has enrichment statistics for GBM  
-* Enrichment of data-set 2: has enrichment statistics for KIRC  
+* [GMT file](https://github.com/bioinformaticsdotca/BiCG_2017/raw/master/module8/hsapiens.pathways.NAME.gmt): has gene-set definitions  
+* [Enrichment of data-set 1](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module8/GBM_gprofiler_results_1048466457480.txt): has enrichment statistics for GBM  
+* [Enrichment of data-set 2](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module8/KIRC_gprofiler_results_1048466457480.txt): has enrichment statistics for KIRC  
 
 <img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module8/pic1.png?raw=true" alt="Cytoscape1" width="750" />  
 
