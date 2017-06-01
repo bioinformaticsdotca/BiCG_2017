@@ -53,7 +53,7 @@ Standard outputs you'll get:
 ## Create Annovar Output
 
 ```
-table_annovar.pl --buildver hg19 Passed.somatic.snvs.vcf.annovar.in.txt /media/cbwdata/software/annovar/annovar/humandb/ --protocol refGene,ljb26_all,1000g2014oct_all,caddgt10,cg69,clinvar_20150330,cosmic70,esp6500siv2_all,exac02,snp138,genomicSuperDups,phastConsElements46way --operation g,f,f,f,f,f,f,f,f,f,r,r --nastring NA --outfile passed.somatic.snvs.vcf.annovar.out.txt
+table_annovar.pl --buildver hg19 Passed.somatic.snvs.vcf.annovar.in.txt /usr/local/annovar/humandb/ -protocol refGene,cytoBand,genomicSuperDups,esp6500siv2_all,1000g2015aug_all,1000g2015aug_eur,exac03,avsnp147,dbnsfp30a -operation g,r,r,f,f,f,f,f,f --nastring NA --outfile passed.somatic.snvs.vcf.annovar.out.txt
 ```
 
 
