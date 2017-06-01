@@ -152,7 +152,9 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 [Lecture b](https://bioinformatics.ca/bicg-2017-mod8b)
 
-[Lab Practical]()  
+[Lab Practical - Annovar](https://bioinformaticsdotca.github.io/bicg_2017_lab_8_gprofiler)  
+
+[Lab Practical - gProfiler](https://bioinformaticsdotca.github.io/bicg_2017_lab_8_gprofiler)  
 
 ***
 
