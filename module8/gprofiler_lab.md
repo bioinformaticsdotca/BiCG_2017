@@ -29,8 +29,8 @@ Supplementary Data, Table 4
 * globally significant, frequency >= 1% for glioblastoma multiforme (GBM): 46  
 * globally significant, frequency >= 1% for kidney renal clear cell carcinoma (KIRC): 53  
 
-[GBM gene list](https://raw.githubusercontent.com/bioinformaticsdotca/HT-Biology_2017/master/Pathways/module13_lab/Genelist_GBM.txt)  
-[KIRC gene list](https://raw.githubusercontent.com/bioinformaticsdotca/HT-Biology_2017/master/Pathways/module13_lab/Genelist_KIRC.txt)  
+[GBM gene list](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module8/Genelist_GBM.txt)  
+[KIRC gene list](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module8/Genelist_KIRC.txt)  
 
 ## Let’s use g:Profiler to obtain enrichment results
 
@@ -80,15 +80,17 @@ Scroll down to see significantly enriched pathways and processes. Scroll right t
 * Enrichment of data-set 1: has enrichment statistics for GBM  
 * Enrichment of data-set 2: has enrichment statistics for KIRC  
 
- 
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module8/pic1.png?raw=true" alt="Cytoscape1" width="750" />  
 
 3.	Set analysis parameters.   
 a.	FDR-corrected P-values are filtered in g:Profiler and no further filtering is needed in Enrichment map.  
 b.	Jaccard coefficient + overlap combined defines the stringency edges between gene sets and the granularity of the map. Use this parameter to create denser or sparser networks. The value 0.66 provides relatively stringent similarity cutoffs and leads to sparser maps. 
- 
+
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module8/pic2.png?raw=true" alt="Cytoscape2" width="750" />
 
 4.	Click ‘Build’. An enrichment map will be generated. 
 5.	The resulting map links nodes to first gene list (GBM) and edges of nodes to second gene list (KIRC). Entirely red nodes are pathways with significant enrichment in both gene lists. Red nodes with gray edges are only significant in first gene list and grey nodes with red edges are only significant in the second list. 
 6.	Map the second gene list to blue tones to make this visualization easier to read. The simplest way involves a spreadsheet editor such as Excel. Edit the phenotype column and replace all values with -1. Make sure you save the file as text file. Review the new text file in a text editor to verify that no extra symbols or quotes have been added by Excel. See https://www.ncbi.nlm.nih.gov/pubmed/27552985. 
 7.	Build the enrichment map again and KIRC pathways will map to blue tones. 
 
+<img src="https://github.com/bioinformaticsdotca/BiCG_2017/blob/master/module8/pic3.png?raw=true" alt="Cytoscape3" width="750" />
