@@ -114,7 +114,11 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 [Lecture](https://bioinformatics.ca/bicg-2017-mod6)
 
-[Lab Practical](https://bioinformaticsdotca.github.io/HTSeq_2017_module6_lab)
+[Lab Practical](https://github.com/griffithlab/rnaseq_tutorial/wiki/Integrated-Assignment)  
+
+[Ballgown code](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module_6_gene_expression/assignment_ballgown.R)  
+
+[Supplementary code](https://github.com/bioinformaticsdotca/BiCG_2017/edit/master/module_6_gene_expression/assignment_Supplementary.R)  
 
 ## Integrated Assignment
 
