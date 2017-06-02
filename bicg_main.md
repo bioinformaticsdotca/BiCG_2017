@@ -118,7 +118,7 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 [Ballgown code](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module_6_gene_expression/assignment_ballgown.R)  
 
-[Supplementary code](https://github.com/bioinformaticsdotca/BiCG_2017/edit/master/module_6_gene_expression/assignment_Supplementary.R)  
+[Supplementary code](https://raw.githubusercontent.com/bioinformaticsdotca/BiCG_2017/master/module_6_gene_expression/assignment_Supplementary.R)  
 
 ## Integrated Assignment
 
@@ -195,3 +195,4 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 ***
 
+Thank you for attending the Bioinformatics for Cancer Genomics workshop! Help us make this workshop better by filling out [our survey](https://goo.gl/forms/Tmcl4rde6XMEhbUF2).
