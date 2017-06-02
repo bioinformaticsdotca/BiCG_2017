@@ -164,11 +164,11 @@ If you have questions or comments, visit the workshop [Q&A forum](https://noteap
 
 *<font color="#827e9c">Lincoln Stein and Robin Haw</font>* 
 
-[Lecture](https://bioinformatics.ca/bicg-2017-mod5)
+[Lecture](https://bioinformatics.ca/bicg-2017-mod8c)
 
 [Lab Lecture](https://bioinformatics.ca/bicg-2017-mod8d)
 
-[Lab Practical](https://bioinformaticsdotca.github.io/bicg_2017_module5_lab)  
+[Lab Practical](https://bioinformaticsdotca.github.io/bicg_2017_module8d_lab)  
 
 ## Guest Lecture
 
