@@ -3,7 +3,7 @@ layout: tutorial_page
 permalink: /bicg_2017_module8d_lab
 title: BiCG Module 8
 header1: Bioinformatics for Cancer Genomics 2017
-header2: Lab Module 8 - Reactoma
+header2: Lab Module 8 - Reactome
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2017
 ---
