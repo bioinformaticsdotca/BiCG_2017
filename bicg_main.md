@@ -6,6 +6,7 @@ header1: Workshop Pages for Students
 header2: Bioinformatics for Cancer Genomics 2017
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 keywords: Visualize genomic data, analyze cancer -omic data, integrate clinical data
+desription: Course covers the bioinformatics tools required to analyze genomic data sets.
 instructors: Trevor Pugh, Francis Ouellette, Jared Simpson, SOrana Morrissy, Fouad Yousif, Andrew McPherson, Jüri Reimand, Lincoln Stein, Robin Haw, Anna Goldenberg
 length: 5 days
 ---
