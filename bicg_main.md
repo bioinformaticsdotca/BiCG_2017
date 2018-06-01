@@ -6,6 +6,7 @@ header1: Workshop Pages for Students
 header2: Bioinformatics for Cancer Genomics 2017
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 keywords: Visualize genomic data, analyze cancer -omic data, integrate clinical data
+description: Cancer research has rapidly embraced high throughput technologies into its research, using various microarray, tissue array, and next generation sequencing platforms. The result has been a rapid increase in cancer data output and data types. Now more than ever, having the informatic skills and knowledge of available bioinformatic resources specific to cancer is critical. The CBW developed a 5-day workshop covering the key bioinformatics concepts and tools required to analyze cancer genomic data sets. Participants will gain practical experience and skills to: Visualize genomic data, Analyse cancer -omic data for gene expression, genome rearrangement, somatic mutations, and copy number varition, analyze and conduct pathway analysis on the resultant cancer gene list, integrate clinical data
 instructors: Trevor Pugh, Francis Ouellette, Jared Simpson, SOrana Morrissy, Fouad Yousif, Andrew McPherson, Jüri Reimand, Lincoln Stein, Robin Haw, Anna Goldenberg
 length: 5 days
 ---
