@@ -6,6 +6,9 @@ header1: Bioinformatics for Cancer Genomics 2017
 header2: Lab Module 8 - Reactome
 image: /site_images/CBW_cancerDNA_icon-16.jpg
 home: https://bioinformaticsdotca.github.io/bicg_2017
+description: Reactome Practical Lab
+author: Robin Haw
+modified: June 1st 2017
 ---
 
 **This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/deed.en_US). This means that you are able to copy, share and modify the work, as long as the result is distributed under the same license.**
